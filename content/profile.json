@@ -2,21 +2,21 @@
   "name": "Amirmahdi Namjoo",
   "tagline": "Ph.D. Student in Computer Science",
   "affiliation": "University of Maryland",
-  "photo": "assets/images/profile.svg",
-  "lead": "I work on computer architecture, systems, and high-performance computing, with a focus on efficient hardware accelerators for sparse and scientific workloads.",
-  "about": "I am a Ph.D. student in Computer Science at the **University of Maryland**, where I research computer architecture and systems in Bahar Asgari's group. My work centers on hardware acceleration for sparse linear algebra, memory systems, and efficient high-performance computing. I completed my B.Sc. in Computer Engineering at **Sharif University of Technology**, where I was a teaching assistant for more than fifteen courses and active in the student scientific community.",
+  "photo": "assets/images/profile.jpg",
+  "lead": "I am a Ph.D. student in Computer Science at the University of Maryland. I work on computer architecture and high-performance computing, with recent research on efficient hardware accelerators for sparse computation.",
+  "about": "I graduated from **Sharif University of Technology** with a B.Sc. in Computer Engineering and am a Ph.D. student in Computer Science at the **University of Maryland** (since Winter 2023), where I research computer architecture and systems in Bahar Asgari's group. My recent work focuses on hardware acceleration for sparse linear algebra and memory systems. My broader interests span computer security and privacy, high-performance computing, operating systems, and software engineering. During my undergraduate studies I was a teaching assistant for more than fifteen courses and served as president of the Computer Engineering Students' Scientific Chapter.",
   "research_interests": [
-    "Computer Architecture",
-    "Systems",
-    "High-Performance Computing",
-    "Hardware Accelerators",
+    "Computer Security and Privacy",
+    "High Performance Computing",
     "Operating Systems",
-    "Machine Learning for Systems"
+    "Computer Architecture",
+    "Software Engineering"
   ],
   "links": [
-    { "label": "Email", "url": "mailto:amirm137878@gmail.com", "glyph": "@", "handle": "Email" },
-    { "label": "GitHub", "url": "https://github.com/titansarus", "glyph": "GH", "handle": "GitHub" },
-    { "label": "Google Scholar", "url": "https://scholar.google.com/citations?user=", "glyph": "GS", "handle": "Scholar" },
-    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/amirmahdi-namjoo-23b4b9192/", "glyph": "in", "handle": "LinkedIn" }
+    { "label": "Email", "icon": "email", "url": "mailto:amirmahdi.namjoo1@gmail.com", "handle": "Email" },
+    { "label": "GitHub", "icon": "github", "url": "https://github.com/titansarus", "handle": "GitHub" },
+    { "label": "Google Scholar", "icon": "google-scholar", "url": "https://scholar.google.com/scholar?q=Amirmahdi+Namjoo", "handle": "Scholar" },
+    { "label": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/in/amirmahdi-namjoo-23b4b9192/", "handle": "LinkedIn" },
+    { "label": "Telegram", "icon": "telegram", "url": "https://t.me/amir_astrophysics", "handle": "Telegram" }
   ]
 }

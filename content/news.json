@@ -1,6 +1,6 @@
 [
   { "date": "Jul 2026", "text": "Rebuilt this website with a custom Python static site generator.", "href": "/blog/" },
-  { "date": "Oct 2025", "text": "Three papers appeared at MICRO 2025 (Chasoń, Misam) and IISWC 2025 (Belenos).", "href": "/publications/" },
+  { "date": "Oct 2025", "text": "Papers appeared at MICRO 2025 (Chasoń, Misam) and IISWC 2025 (Belenos).", "href": "/publications/" },
   { "date": "2023", "text": "Started my Ph.D. in Computer Science at the University of Maryland." },
-  { "date": "2023", "text": "Completed my B.Sc. in Computer Engineering at Sharif University of Technology." }
+  { "date": "2023", "text": "Graduated from Sharif University of Technology with a B.Sc. in Computer Engineering." }
 ]

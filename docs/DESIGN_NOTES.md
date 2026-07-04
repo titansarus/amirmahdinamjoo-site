@@ -37,9 +37,26 @@ not load, embed, or depend on it, and its exact DOM is not copied.
 
 ## Content reconciliation
 
-Content was drawn from the live site (`amirmahdinamjoo.com`) and reconciled with
-the reference. Publications, experience, projects, service, and awards reflect
-the real record; a few items carry a `_todo` field where an exact title or
-author list should be confirmed. Current affiliation is **University of
-Maryland** (consistent with the co-authored MICRO/IISWC papers), which is the
-factual record from the live site.
+Content is sourced from the author's Hugo/Wowchemy repository
+[`titansarus/amirmahdi-namjoo`](https://github.com/titansarus/amirmahdi-namjoo)
+(the source of `amirmahdinamjoo.com`) and reorganized into this generator's
+collection model. Publications carry the real titles, authors, DOIs, links, and
+BibTeX from that repo's `cite.bib` files; experience, honors, service, and the
+15 projects reflect the real record. Current affiliation is **University of
+Maryland** (a Ph.D. student in Computer Science since Winter 2023), consistent
+with both the source repo and the co-authored MICRO/IISWC papers.
+
+## Icons and logos
+
+Real assets are reused from the source repository rather than text glyphs:
+
+- **Social links** render real brand icons (GitHub, LinkedIn, Google Scholar,
+  email, Telegram) via an inline-SVG macro (`components/social_icon.html.j2`,
+  `currentColor` so they theme automatically).
+- **University / organization logos** (Sharif, CMMRS, ICPC, SSC, WSS, Hardwar,
+  DataDays, YSC) appear on experience, honors, and service items via each item's
+  `logo` field; items without an available logo fall back to initials.
+- **Technology icons** on project cards are driven by the generic `tech_icons`
+  map in `site.config.json`, so the engine ships no built-in icon set.
+- The avatar (`assets/images/profile.jpg`) and résumé (`assets/files/cv.pdf`)
+  are the real files from the source repo.

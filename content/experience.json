@@ -3,19 +3,10 @@
     "title": "Graduate Research Assistant",
     "org": "University of Maryland",
     "category": "Research",
-    "start_date": "2023",
+    "start_date": "2023-01",
     "current": true,
     "logo_initials": "UMD",
-    "summary": "Computer architecture and systems research on hardware acceleration for sparse linear algebra and memory systems (Bahar Asgari's group)."
-  },
-  {
-    "title": "Software Engineer (Internship)",
-    "org": "Digikala",
-    "category": "Industry",
-    "start_date": "2022-06",
-    "end_date": "2022-09",
-    "logo_initials": "DK",
-    "summary": "Worked on a large-scale e-commerce platform using PHP, MySQL, Elasticsearch, Jenkins, and Swagger."
+    "summary": "Computer architecture and systems research on hardware acceleration for sparse linear algebra and memory systems, in Bahar Asgari's group. Co-authored work at MICRO 2025 and IISWC 2025."
   },
   {
     "title": "Teaching Assistant & Head Teaching Assistant",
@@ -23,8 +14,17 @@
     "category": "Teaching",
     "start_date": "2019-09",
     "end_date": "2023-08",
-    "logo_initials": "SUT",
-    "summary": "TA and Head TA for 15+ computer engineering courses, including Operating Systems, Artificial Intelligence, Compiler Design, Advanced Programming (Java), Computer Networks, Computer Architecture, Probability & Statistics, and Fundamentals of Programming (C)."
+    "logo": "assets/logos/sharif.svg",
+    "summary": "Teaching assistant and head teaching assistant for 15+ computer engineering courses over four years, including Operating Systems, Artificial Intelligence, Compiler Design, Computer Architecture, Computer Networks, Computer Security, Design of Algorithms, Numerical Computations, Advanced Programming in Java, Probability & Statistics, Discrete Structures, and Fundamentals of Programming in C."
+  },
+  {
+    "title": "Software Engineering Intern",
+    "org": "Star Academy",
+    "category": "Industry",
+    "start_date": "2020-07",
+    "end_date": "2020-09",
+    "logo_initials": "SA",
+    "summary": "Summer software engineering internship; contributed to a graph-analysis web application for detecting financial fraud in bank transactions using ASP.NET Core, Elasticsearch, Kibana, and Angular."
   },
   {
     "title": "B.Sc. in Computer Engineering",
@@ -32,7 +32,7 @@
     "category": "Education",
     "start_date": "2018-09",
     "end_date": "2023-07",
-    "logo_initials": "SUT",
+    "logo": "assets/logos/sharif.svg",
     "summary": "Bachelor of Science in Computer Engineering."
   },
   {

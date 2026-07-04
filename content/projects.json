@@ -9,53 +9,101 @@
     "links": [{ "label": "GitHub", "url": "https://github.com/titansarus" }]
   },
   {
-    "title": "Arno — Service Requesting Platform",
+    "title": "Arno — Service Requesting System",
     "date": "2022-09",
     "featured": true,
-    "summary": "A full-stack service-request system with user, provider, and admin flows.",
+    "summary": "An online service-requesting platform with customer, provider, and admin panels, designed with the Unified Process and object-oriented design principles.",
     "technologies": ["Django", "React", "Docker", "PostgreSQL"],
-    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus" }]
+    "links": [{ "label": "GitHub", "url": "https://github.com/Arno-Project" }]
   },
   {
     "title": "Health Monitoring System",
     "date": "2022-08",
-    "summary": "An IoT project that collects and visualizes patient vitals from embedded sensors.",
-    "technologies": ["Raspberry Pi", "Arduino", "React Native", "Python"]
+    "featured": true,
+    "summary": "An embedded system that measures a patient's SpO2, heart rate, ECG, and body/environment temperature on a Raspberry Pi + Arduino, with a mobile app and central server.",
+    "technologies": ["Raspberry Pi", "Arduino", "React Native", "Django", "Docker"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/Sharif-University-ESRLab/project-team-2" }]
   },
   {
-    "title": "Multicore & GPU Computing Projects",
+    "title": "Multicore Computing Projects",
     "date": "2022-08",
-    "summary": "Parallel implementations of compute-heavy kernels on CPUs and GPUs.",
-    "technologies": ["CUDA", "OpenMP", "C++"]
-  },
-  {
-    "title": "Telenurse — Healthcare Logistics",
-    "date": "2022-02",
-    "summary": "A platform connecting patients with at-home nursing and healthcare logistics.",
-    "technologies": ["Django", "React"]
+    "featured": true,
+    "summary": "GPU and CPU parallel kernels: a Sobel edge-detection filter and green-screen replacement in CUDA/SIMD, and an N-Queens solver in OpenMP.",
+    "technologies": ["CUDA", "OpenMP", "C++"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/Savaw/Multicore" }]
   },
   {
     "title": "CMinus Compiler",
     "date": "2022-01",
     "featured": true,
-    "summary": "A compiler for the C-minus language with scanner, parser, semantic analysis, and code generation.",
-    "technologies": ["Python", "Compilers"],
+    "summary": "A full compiler for the C-minus language (lexer, parser, semantic analyzer, and code generator) written in pure Python.",
+    "technologies": ["Python"],
     "body": "markdown/projects/cminus-compiler.md",
-    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus" }]
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus/CMinusCompiler" }]
   },
   {
     "title": "PintOS",
     "date": "2021-05",
     "featured": true,
-    "summary": "A multi-phase operating systems project implementing threads, user programs, and file-system features.",
-    "technologies": ["C", "PintOS", "GDB"],
+    "summary": "A multi-phase operating systems project on PintOS (based on Berkeley CS162) implementing user programs, threads, and file-system features in C.",
+    "technologies": ["C", "Linux", "Git"],
     "body": "markdown/projects/pintos.md",
-    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus" }]
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus/PintOS" }]
+  },
+  {
+    "title": "Telenurse — Healthcare Logistics",
+    "date": "2022-02",
+    "summary": "A logistics platform connecting patients who need at-home nursing with providers, built as a System Analysis & Design project using Scrum.",
+    "technologies": ["Django", "PostgreSQL", "Docker"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus/Telenurse" }]
   },
   {
     "title": "Peer-to-Peer Network",
     "date": "2021-08",
-    "summary": "A Python peer-to-peer networking project built for the Computer Networks course.",
-    "technologies": ["Python", "Sockets", "Networking"]
+    "summary": "A binary-tree-structured peer-to-peer network in Python with custom packet types and a simple P2P chat application built on top.",
+    "technologies": ["Python"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/mohammadrezaabdi/CE_CN_Project_992" }]
+  },
+  {
+    "title": "Computer Architecture Course Project",
+    "date": "2020-07",
+    "summary": "Designed and tested a multicycle CPU in Quartus, plus cache-configuration experiments in gem5.",
+    "technologies": ["Verilog", "C++"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/lTheMightyMl/ComputerArch" }]
+  },
+  {
+    "title": "Duelyst",
+    "date": "2019-08",
+    "summary": "A clone of the Duelyst turn-based strategy game built for the Advanced Programming course using Java and JavaFX.",
+    "technologies": ["Java", "JavaFX"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus/Duelyst_java8" }]
+  },
+  {
+    "title": "Artificial Intelligence Course Projects",
+    "date": "2021-02",
+    "summary": "Local search (hill climbing, simulated annealing), genetic programming for symbolic regression, decision trees, SVMs, and multilayer perceptrons.",
+    "technologies": ["Python", "PyTorch"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus/AI-Projects" }]
+  },
+  {
+    "title": "Realtime Systems Project",
+    "date": "2022-07",
+    "summary": "A real-time clock-management system using the threading capabilities of Real-Time Java, with a minimal Swing GUI.",
+    "technologies": ["Java"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus/Realtime-Project" }]
+  },
+  {
+    "title": "AML Microarray Analysis",
+    "date": "2021-02",
+    "summary": "Acute Myeloid Leukemia microarray analysis using the R programming language for the Introduction to Bioinformatics course.",
+    "technologies": ["R"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus/Bioinformatics-Microarray-Analysis-AML" }]
+  },
+  {
+    "title": "Rosalind Bioinformatics Problems",
+    "date": "2021-02",
+    "summary": "Solutions to Rosalind bioinformatics problems from the Bioinformatics Algorithms book, implemented in C++.",
+    "technologies": ["C++"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus/Bioinformatics-Algorithms" }]
   }
 ]

@@ -2,40 +2,59 @@
   {
     "title": "Chasoń: Supporting Cross HBM Channel Data Migration to Enable Efficient Sparse Algebraic Acceleration",
     "authors": "Ubaid Bakhtiar, Amirmahdi Namjoo, Bahar Asgari",
-    "venue": "MICRO 2025 (58th IEEE/ACM International Symposium on Microarchitecture)",
+    "venue": "58th IEEE/ACM International Symposium on Microarchitecture (MICRO)",
     "year": 2025,
     "selected": true,
     "doi": "10.1145/3725843.3756086",
-    "tags": ["Computer Architecture", "HBM", "Sparse Acceleration"]
+    "summary": "An HBM-based streaming accelerator for sparse matrix-vector multiplication that migrates data across HBM channels (Cross-HBM Channel out-of-order scheduling) to mitigate resource underutilization.",
+    "tags": ["Computer Architecture", "HBM", "Sparse Acceleration"],
+    "links": [
+      { "label": "PDF", "url": "https://dl.acm.org/doi/pdf/10.1145/3725843.3756086" },
+      { "label": "Code", "url": "https://github.com/UbaidHunts/Chason" }
+    ],
+    "bibtex": "@inproceedings{10.1145/3725843.3756086,\n  author = {Bakhtiar, Ubaid and Namjoo, Amirmahdi and Asgari, Bahar},\n  title = {Chason: Supporting Cross HBM Channel Data Migration to Enable Efficient Sparse Algebraic Acceleration},\n  year = {2025},\n  doi = {10.1145/3725843.3756086},\n  booktitle = {Proceedings of the 58th IEEE/ACM International Symposium on Microarchitecture},\n  pages = {778--794},\n  series = {MICRO '25}\n}"
   },
   {
-    "title": "Misam: Machine Learning Assisted Dataflow Selection for Sparse Matrix Multiplication Acceleration",
+    "title": "Misam: Machine Learning Assisted Dataflow Selection in Accelerators for Sparse Matrix Multiplication",
     "authors": "Sanjali Yadav, Amirmahdi Namjoo, Bahar Asgari",
-    "venue": "MICRO 2025 (58th IEEE/ACM International Symposium on Microarchitecture)",
+    "venue": "58th IEEE/ACM International Symposium on Microarchitecture (MICRO)",
     "year": 2025,
     "selected": true,
     "doi": "10.1145/3725843.3756126",
-    "tags": ["Machine Learning for Systems", "Dataflow", "Accelerators"],
-    "_todo": "Confirm the exact published title/subtitle."
+    "summary": "A machine-learning framework that uses a lightweight decision tree and FPGA reconfiguration to select the optimal dataflow for sparse matrix-matrix multiplication at runtime.",
+    "tags": ["Machine Learning for Systems", "Reconfigurable Computing", "Accelerators"],
+    "links": [
+      { "label": "PDF", "url": "https://dl.acm.org/doi/pdf/10.1145/3725843.3756126" }
+    ],
+    "bibtex": "@inproceedings{10.1145/3725843.3756126,\n  author = {Yadav, Sanjali and Namjoo, Amirmahdi and Asgari, Bahar},\n  title = {Misam: Machine Learning Assisted Dataflow Selection in Accelerators for Sparse Matrix Multiplication},\n  year = {2025},\n  doi = {10.1145/3725843.3756126},\n  booktitle = {Proceedings of the 58th IEEE/ACM International Symposium on Microarchitecture},\n  pages = {824--838},\n  series = {MICRO '25}\n}"
   },
   {
-    "title": "Belenos: Bottleneck Evaluation to Link Biomechanics and Accelerator Design",
-    "authors": "Hana Chitsaz, Johnson Umeike, Amirmahdi Namjoo, et al.",
-    "venue": "IISWC 2025 (IEEE International Symposium on Workload Characterization)",
+    "title": "Belenos: Bottleneck Evaluation to Link Biomechanics to Novel Computing Optimizations",
+    "authors": "Hana Chitsaz, Johnson Umeike, Amirmahdi Namjoo, Babak N. Safa, Bahar Asgari",
+    "venue": "IEEE International Symposium on Workload Characterization (IISWC)",
     "year": 2025,
     "selected": true,
     "doi": "10.48550/arXiv.2510.15908",
-    "tags": ["Workload Characterization", "Accelerators"],
-    "_todo": "Confirm full author list and exact title (arXiv:2510.15908)."
+    "summary": "A workload characterization of finite-element biomechanics simulations (FEBio) using gem5 and VTune, identifying architectural bottlenecks and optimal configurations for domain-specific accelerators.",
+    "tags": ["Workload Characterization", "Reconfigurable Computing", "Computer Architecture"],
+    "links": [
+      { "label": "PDF", "url": "https://arxiv.org/pdf/2510.15908" },
+      { "label": "arXiv", "url": "https://arxiv.org/abs/2510.15908" }
+    ],
+    "bibtex": "@misc{chitsaz2025belenosbottleneckevaluationlink,\n  title = {Belenos: Bottleneck Evaluation to Link Biomechanics to Novel Computing Optimizations},\n  author = {Hana Chitsaz and Johnson Umeike and Amirmahdi Namjoo and Babak N. Safa and Bahar Asgari},\n  year = {2025},\n  eprint = {2510.15908},\n  archivePrefix = {arXiv},\n  primaryClass = {cs.AR},\n  url = {https://arxiv.org/abs/2510.15908}\n}"
   },
   {
-    "title": "Novel Distance-Learning Methods to Overcome Challenges of the COVID-19 Pandemic",
-    "authors": "Amirmahdi Namjoo, et al.",
-    "venue": "EDULEARN 2022 (14th International Conference on Education and New Learning Technologies)",
+    "title": "Novel Distance-Learning Methods to Overcome Challenges Caused by COVID-19 in Undergraduate Programming Courses",
+    "authors": "Amirmahdi Namjoo, Seyed Parsa Neshaei, Parham Chavoshian, Parham Saremi, Mohammad Taha Jahani-Nezhad, AmirMahdi Kousheshi, Mohammadamin Fazli",
+    "venue": "14th International Conference on Education and New Learning Technologies (EDULEARN)",
     "year": 2022,
     "selected": false,
     "doi": "10.21125/edulearn.2022.2233",
-    "tags": ["Education"],
-    "_todo": "Confirm exact title and co-authors."
+    "summary": "Distance-learning techniques used to improve the education and assessment of undergraduate programming courses at Sharif University of Technology during the COVID-19 pandemic.",
+    "tags": ["CS Education", "E-learning"],
+    "links": [
+      { "label": "PDF", "url": "https://library.iated.org/view/NESHAEI2022NOV" }
+    ],
+    "bibtex": "@inproceedings{namjoo2022novel,\n  author = {Namjoo, Amirmahdi and Neshaei, Seyed Parsa and Chavoshian, Parham and Saremi, Parham and Jahani-Nezhad, Mohammad Taha and Kousheshi, AmirMahdi and Fazli, Mohammadamin},\n  title = {Novel Distance-Learning Methods to Overcome Challenges Caused by COVID-19 in Undergraduate Programming Courses},\n  year = {2022},\n  doi = {10.21125/edulearn.2022.2233},\n  booktitle = {14th International Conference on Education and New Learning Technologies (EDULEARN)}\n}"
   }
 ]

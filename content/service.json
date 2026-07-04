@@ -4,8 +4,9 @@
     "org": "Students' Scientific Chapter (SSC), Sharif University of Technology",
     "category": "Leadership",
     "start_date": "2022-09",
-    "end_date": "2023-08",
-    "summary": "Led the student scientific chapter, organizing academic events, workshops, and competitions."
+    "end_date": "2023-09",
+    "logo": "assets/logos/ssc.svg",
+    "summary": "Elected president of the Computer Engineering Students' Scientific Chapter — a student association that runs scientific talks and events throughout the year — after winning the most votes in the general election and the central council."
   },
   {
     "title": "Chief of Staff",
@@ -13,30 +14,70 @@
     "category": "Event Organization",
     "start_date": "2023-04",
     "end_date": "2023-05",
-    "summary": "Coordinated staff and logistics for the ICPC Asia Tehran regional programming contest."
+    "logo": "assets/logos/icpc.svg",
+    "summary": "Chief of Staff for the ICPC Asia Tehran regional programming contest."
   },
   {
     "title": "Vice Chair",
     "org": "Winter Seminar Series (WSS) 2022",
     "category": "Event Organization",
-    "start_date": "2023-02",
-    "end_date": "2023-04",
-    "summary": "Helped organize an international seminar series featuring researchers across computer science."
+    "start_date": "2022-02",
+    "end_date": "2022-04",
+    "logo": "assets/logos/wss.svg",
+    "summary": "Vice chair of the Winter Seminar Series, an international event where invited professors and researchers present their work."
   },
   {
-    "title": "Executive & Scientific Staff",
-    "org": "Hardwar 2023, Hardwar 2022, WSS 2022, DataDays 2021",
+    "title": "Executive Staff",
+    "org": "Hardwar 2023",
     "category": "Event Organization",
-    "start_date": "2021",
-    "end_date": "2023",
-    "summary": "Served on the executive and scientific committees of multiple academic events and competitions."
+    "start_date": "2023-04",
+    "end_date": "2023-05",
+    "logo": "assets/logos/hardwar.svg",
+    "summary": "Executive team member for Hardwar 2023, a two-day hardware-focused student competition."
+  },
+  {
+    "title": "Scientific Staff",
+    "org": "Hardwar 2022",
+    "category": "Event Organization",
+    "start_date": "2022-05",
+    "end_date": "2022-06",
+    "logo": "assets/logos/hardwar.svg",
+    "summary": "Scientific staff for the FPGA track of Hardwar 2022."
+  },
+  {
+    "title": "Scientific Staff",
+    "org": "Winter Seminar Series (WSS) 2022",
+    "category": "Event Organization",
+    "start_date": "2021-12",
+    "end_date": "2022-04",
+    "logo": "assets/logos/wss.svg",
+    "summary": "Responsible for the selection and invitation of speakers for WSS 2022."
+  },
+  {
+    "title": "Scientific Staff",
+    "org": "DataDays 2021",
+    "category": "Event Organization",
+    "start_date": "2020-12",
+    "end_date": "2021-09",
+    "logo": "assets/logos/datadays.svg",
+    "summary": "Prepared educational content, including Jupyter notebooks, for DataDays — a data-science tournament held by the SSC."
   },
   {
     "title": "Technical Staff",
-    "org": "ICPC Contests",
+    "org": "ACM-ICPC Asia Tehran Regional Contest 2019",
     "category": "Event Organization",
-    "start_date": "2019",
-    "end_date": "2020",
-    "summary": "Provided technical support and judging infrastructure for competitive programming contests."
+    "start_date": "2019-10",
+    "end_date": "2019-12",
+    "logo": "assets/logos/icpc.svg",
+    "summary": "Technical staff for the ICPC Asia Tehran regional contest."
+  },
+  {
+    "title": "Technical Staff",
+    "org": "2019 ICPC Asia–West Continent Final Contest (Tehran Site)",
+    "category": "Event Organization",
+    "start_date": "2020-01",
+    "end_date": "2020-01",
+    "logo": "assets/logos/icpc.svg",
+    "summary": "Technical staff for the ICPC Asia–West Continent Final Contest, Tehran site."
   }
 ]

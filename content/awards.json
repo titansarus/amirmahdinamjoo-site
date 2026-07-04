@@ -1,20 +1,23 @@
 [
   {
-    "title": "CMMRS 2021 — Cornell, Maryland, Max Planck Pre-doctoral Research School",
-    "org": "Max Planck Institute",
+    "title": "CMMRS 2021 — Cornell, Maryland, Max Planck Pre-Doctoral Research School",
+    "org": "Cornell · UMD · Max Planck",
     "date": "2021-08",
-    "summary": "Selected participant in the competitive pre-doctoral research school on computing systems."
-  },
-  {
-    "title": "Ranked 81st Nationally — University Entrance Exam (Konkour), Mathematics",
-    "org": "National Organization for Educational Testing",
-    "date": "2018-06",
-    "summary": "Top national ranking among hundreds of thousands of participants in the mathematics track."
+    "logo": "assets/logos/cmmrs.svg",
+    "summary": "A pre-doctoral school in computer science organized by Cornell University, the Max Planck Institute for Software Systems, and the University of Maryland. Selected as one of about 80 students from around the world."
   },
   {
     "title": "National Bronze Medal — Olympiad in Astronomy and Astrophysics",
-    "org": "Iran National Astronomy Olympiad",
-    "date": "2017-06",
-    "summary": "Awarded a national bronze medal in the Iranian Astronomy and Astrophysics Olympiad."
+    "org": "Young Scholars Club",
+    "date": "2017-09",
+    "logo": "assets/logos/ysc.svg",
+    "summary": "Awarded a national bronze medal, among about 40 medalists selected from more than 10,000 students through a series of national exams and courses."
+  },
+  {
+    "title": "Ranked 81st Nationally — University Entrance Exam (Konkur), Mathematics",
+    "org": "National University Entrance Exam",
+    "date": "2018-06",
+    "logo_initials": "81",
+    "summary": "Ranked 81st in the national mathematics entrance exam among more than 144,000 students nationwide (top 0.06%)."
   }
 ]

@@ -80,9 +80,17 @@ Steps to go live on the test domain:
 To later move to the custom domain, switch the build to `--env production`
 (which emits the `CNAME`) and configure DNS.
 
-## Content notes
+## Content
 
-Some publication entries include a `_todo` field marking an exact title or
-author list to confirm; `_todo` fields are ignored by the build. Replace
-`assets/files/cv.pdf` and `assets/images/profile.svg` with the real CV and
-portrait when available.
+Content (profile, publications with real BibTeX, experience, honors, service,
+and projects) is sourced from the author's Hugo/Wowchemy site,
+[`titansarus/amirmahdi-namjoo`](https://github.com/titansarus/amirmahdi-namjoo),
+and reorganized into this generator's collection model. The real résumé
+(`assets/files/cv.pdf`), avatar (`assets/images/profile.jpg`), and the
+university/organization logos and technology icons under `assets/logos/` and
+`assets/icons/tech/` are copied from that repository.
+
+Social links render real brand icons via an inline-SVG macro
+(`components/social_icon.html.j2`); project technology pills show icons via the
+`tech_icons` map in `site.config.json`. The only placeholder is the Google
+Scholar link, which points to a name search until a profile URL is added.
