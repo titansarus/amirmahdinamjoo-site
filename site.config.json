@@ -65,13 +65,18 @@
       "type": "publication-list", "schema": "publication_item",
       "sort_by": "year", "sort_order": "desc", "detail_pages": false
     },
+    "education": {
+      "label": "Education", "slug": "education", "source": "content/education.json",
+      "type": "timeline", "schema": "timeline_item",
+      "sort_by": "start_date", "sort_order": "desc", "detail_pages": false
+    },
     "experience": {
       "label": "Experience", "slug": "experience", "source": "content/experience.json",
       "type": "timeline", "schema": "timeline_item",
       "sort_by": "start_date", "sort_order": "desc", "group_by": "category", "detail_pages": false
     },
     "awards": {
-      "label": "Honors & Awards", "slug": "awards", "source": "content/awards.json",
+      "label": "Honors & Awards", "slug": "honors", "source": "content/awards.json",
       "type": "timeline", "schema": "timeline_item",
       "sort_by": "date", "sort_order": "desc", "detail_pages": false
     },
@@ -99,7 +104,8 @@
   "homepage": {
     "sections": [
       { "type": "hero", "source": "content/profile.json" },
-      { "type": "news", "title": "News", "source": "content/news.json" },
+      { "type": "collection_preview", "eyebrow": "Background", "title": "Education",
+        "collection": "education", "limit": 5, "link_to_full_page": true },
       { "type": "collection_preview", "eyebrow": "Research", "title": "Selected Publications",
         "collection": "publications", "filter": { "selected": true }, "limit": 3, "link_to_full_page": true },
       { "type": "collection_preview", "eyebrow": "Selected Work", "title": "Projects",
@@ -113,9 +119,11 @@
 
   "pages": [
     { "title": "Publications", "slug": "publications", "layout": "collection_page", "collections": ["publications"] },
-    { "title": "Experience", "slug": "experience", "layout": "collection_page", "collections": ["experience", "awards"] },
-    { "title": "Projects", "slug": "projects", "layout": "collection_page", "collections": ["projects"] },
+    { "title": "Education", "slug": "education", "layout": "collection_page", "collections": ["education"] },
+    { "title": "Experience", "slug": "experience", "layout": "collection_page", "collections": ["experience"] },
+    { "title": "Projects", "slug": "projects", "layout": "projects_showcase", "collections": ["projects"] },
     { "title": "Service", "slug": "service", "layout": "collection_page", "collections": ["service"] },
+    { "title": "Honors", "slug": "honors", "layout": "collection_page", "collections": ["awards"] },
     { "title": "Blog", "slug": "blog", "layout": "collection_page", "collections": ["blog"] },
     { "title": "Personal", "slug": "personal", "layout": "collection_page", "collections": ["personal_sections"] }
   ],

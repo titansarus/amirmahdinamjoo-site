@@ -1,21 +1,56 @@
 [
   {
     "title": "Graduate Research Assistant",
+    "org": "University of Southern California",
+    "category": "Research",
+    "start_date": "2026-08",
+    "current": true,
+    "logo_initials": "USC",
+    "location": "Los Angeles, CA",
+    "summary": "Ph.D. research in electrical and computer engineering, focused on computer architecture and computing systems."
+  },
+  {
+    "title": "Graduate Research Assistant",
     "org": "University of Maryland",
     "category": "Research",
-    "start_date": "2023-01",
-    "current": true,
+    "start_date": "2024-08",
+    "end_date": "2026-05",
     "logo_initials": "UMD",
-    "summary": "Computer architecture and systems research on hardware acceleration for sparse linear algebra and memory systems, in Bahar Asgari's group. Co-authored work at MICRO 2025 and IISWC 2025."
+    "location": "College Park, MD",
+    "summary": "Computer architecture research on hardware acceleration for sparse linear algebra and memory systems in Bahar Asgari's group. Co-authored work at MICRO 2025 and IISWC 2025."
   },
   {
     "title": "Teaching Assistant & Head Teaching Assistant",
     "org": "Sharif University of Technology",
     "category": "Teaching",
-    "start_date": "2019-09",
+    "start_date": "2023-02",
     "end_date": "2023-08",
     "logo": "assets/logos/sharif.svg",
-    "summary": "Teaching assistant and head teaching assistant for 15+ computer engineering courses over four years, including Operating Systems, Artificial Intelligence, Compiler Design, Computer Architecture, Computer Networks, Computer Security, Design of Algorithms, Numerical Computations, Advanced Programming in Java, Probability & Statistics, Discrete Structures, and Fundamentals of Programming in C."
+    "location": "Tehran, Iran",
+    "summary": "Spring & Summer 2023.",
+    "body": "markdown/experience/ta-2023-spring.md"
+  },
+  {
+    "title": "Teaching Assistant & Head Teaching Assistant",
+    "org": "Sharif University of Technology",
+    "category": "Teaching",
+    "start_date": "2022-09",
+    "end_date": "2023-02",
+    "logo": "assets/logos/sharif.svg",
+    "location": "Tehran, Iran",
+    "summary": "Fall 2022 & Winter 2023.",
+    "body": "markdown/experience/ta-2022-fall.md"
+  },
+  {
+    "title": "Teaching Assistant & Head Teaching Assistant",
+    "org": "Sharif University of Technology",
+    "category": "Teaching",
+    "start_date": "2022-02",
+    "end_date": "2022-08",
+    "logo": "assets/logos/sharif.svg",
+    "location": "Tehran, Iran",
+    "summary": "Spring & Summer 2022.",
+    "body": "markdown/experience/ta-2022-spring.md"
   },
   {
     "title": "Software Engineering Intern",
@@ -24,24 +59,7 @@
     "start_date": "2020-07",
     "end_date": "2020-09",
     "logo_initials": "SA",
+    "location": "Tehran, Iran",
     "summary": "Summer software engineering internship; contributed to a graph-analysis web application for detecting financial fraud in bank transactions using ASP.NET Core, Elasticsearch, Kibana, and Angular."
-  },
-  {
-    "title": "B.Sc. in Computer Engineering",
-    "org": "Sharif University of Technology",
-    "category": "Education",
-    "start_date": "2018-09",
-    "end_date": "2023-07",
-    "logo": "assets/logos/sharif.svg",
-    "summary": "Bachelor of Science in Computer Engineering."
-  },
-  {
-    "title": "High School Diploma, Mathematics & Physics",
-    "org": "Shahid Beheshti NODET (SAMPAD)",
-    "category": "Education",
-    "start_date": "2014",
-    "end_date": "2018",
-    "logo_initials": "NDT",
-    "summary": "National Organization for Development of Exceptional Talents (SAMPAD)."
   }
 ]

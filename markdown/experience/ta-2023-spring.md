@@ -1,0 +1,7 @@
+- **Head Teaching Assistant** — Advanced Programming in Java (Dr. MohammadAmin Fazli)
+- **Head Teaching Assistant** — Probability and Statistics in Engineering (Dr. Mahdi Jafari Siavoshani)
+- **Head Teaching Assistant** — Fundamentals of Programming in C (Mr. Hamidreza Hosseinkhani)
+- Teaching Assistant — Operating Systems (Dr. Mehdi Kharrazi)
+- Teaching Assistant — Compiler Design (Ms. Samaneh Hosseinmardi)
+- Teaching Assistant — Computer Architecture (Dr. Laleh Arshadi)
+- Teaching Assistant — Numerical Computations (Prof. Hamid Sarbazi-Azad and Dr. Samira Hossein Ghorban)

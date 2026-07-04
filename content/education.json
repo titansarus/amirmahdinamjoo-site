@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Ph.D. in Electrical and Computer Engineering",
+    "org": "University of Southern California",
+    "start_date": "2026-08",
+    "current": true,
+    "logo_initials": "USC",
+    "location": "Los Angeles, CA",
+    "summary": "Doctoral studies in electrical and computer engineering, with a focus on computer architecture and computing systems."
+  },
+  {
+    "title": "M.Sc. in Computer Science",
+    "org": "University of Maryland",
+    "start_date": "2024-08",
+    "end_date": "2026-05",
+    "logo_initials": "UMD",
+    "location": "College Park, MD",
+    "summary": "Research on hardware acceleration for sparse linear algebra and memory systems in Bahar Asgari's group; co-authored work at MICRO 2025 and IISWC 2025."
+  },
+  {
+    "title": "B.Sc. in Computer Engineering",
+    "org": "Sharif University of Technology",
+    "start_date": "2018-09",
+    "end_date": "2023-07",
+    "logo": "assets/logos/sharif.svg",
+    "location": "Tehran, Iran",
+    "summary": "Bachelor of Science in Computer Engineering. Teaching assistant for 15+ courses and president of the Computer Engineering Students' Scientific Chapter."
+  },
+  {
+    "title": "High School Diploma, Mathematics & Physics",
+    "org": "Shahid Beheshti NODET (SAMPAD)",
+    "start_date": "2014-09",
+    "end_date": "2018-06",
+    "logo_initials": "NDT",
+    "location": "Iran",
+    "summary": "National Organization for Development of Exceptional Talents (SAMPAD)."
+  }
+]

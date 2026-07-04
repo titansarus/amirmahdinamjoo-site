@@ -1,0 +1,7 @@
+- **Head Teaching Assistant** — Computer Networks (Dr. Laleh Arshadi)
+- **Head Teaching Assistant** — Advanced Programming in Java (Dr. MohammadAmin Fazli)
+- **Co-Head Teaching Assistant** — Discrete Structures (Dr. Hamid Zarrabi-Zadeh)
+- Teaching Assistant — Operating Systems (Dr. Mehdi Kharrazi)
+- Teaching Assistant — Computer Networks (Dr. Mahdi Jafari Siavoshani)
+- Teaching Assistant — Artificial Intelligence (Dr. Mohammad Hossein Rohban)
+- Teaching Assistant — Compiler Design (Mr. Mohammad Reza Bahrami)

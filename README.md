@@ -28,6 +28,21 @@ docs/DESIGN_NOTES.md    # how the reference maps to the templates
 .github/workflows/      # GitHub Pages deployment
 ```
 
+## Projects page — two designs to compare
+
+The **Projects** page (`templates/layouts/projects_showcase.html.j2`, a
+site-level template override) currently renders the same projects in **two
+designs** so they can be compared:
+
+- **Design A — List view:** a compact horizontal list, like the experience and
+  service sections.
+- **Design B — Card view:** reworked cards with an accent bar instead of an
+  empty image placeholder.
+
+Once a preferred design is chosen, set the page's `layout` back to
+`collection_page` (Design B is the default `cards` rendering) or trim the
+override to keep only the chosen section.
+
 ## Local development
 
 Install the generator from the sibling repo in editable mode, then build:

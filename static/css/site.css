@@ -14,3 +14,7 @@
 
 /* Subtle lift on project cards specific to this site. */
 .project-card:hover { box-shadow: 0 6px 20px rgba(37, 99, 235, 0.10); }
+
+/* Projects showcase page: two designs to compare. */
+.project-design + .project-design { margin-top: 52px; padding-top: 40px; border-top: 1px solid var(--color-border); }
+.design-note { font-size: 14px; color: var(--color-text-muted); margin: 0 0 18px; max-width: 60ch; }
