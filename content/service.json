@@ -1,0 +1,42 @@
+[
+  {
+    "title": "President",
+    "org": "Students' Scientific Chapter (SSC), Sharif University of Technology",
+    "category": "Leadership",
+    "start_date": "2022-09",
+    "end_date": "2023-08",
+    "summary": "Led the student scientific chapter, organizing academic events, workshops, and competitions."
+  },
+  {
+    "title": "Chief of Staff",
+    "org": "ICPC Asia Tehran Regional Contest 2022",
+    "category": "Event Organization",
+    "start_date": "2023-04",
+    "end_date": "2023-05",
+    "summary": "Coordinated staff and logistics for the ICPC Asia Tehran regional programming contest."
+  },
+  {
+    "title": "Vice Chair",
+    "org": "Winter Seminar Series (WSS) 2022",
+    "category": "Event Organization",
+    "start_date": "2023-02",
+    "end_date": "2023-04",
+    "summary": "Helped organize an international seminar series featuring researchers across computer science."
+  },
+  {
+    "title": "Executive & Scientific Staff",
+    "org": "Hardwar 2023, Hardwar 2022, WSS 2022, DataDays 2021",
+    "category": "Event Organization",
+    "start_date": "2021",
+    "end_date": "2023",
+    "summary": "Served on the executive and scientific committees of multiple academic events and competitions."
+  },
+  {
+    "title": "Technical Staff",
+    "org": "ICPC Contests",
+    "category": "Event Organization",
+    "start_date": "2019",
+    "end_date": "2020",
+    "summary": "Provided technical support and judging infrastructure for competitive programming contests."
+  }
+]

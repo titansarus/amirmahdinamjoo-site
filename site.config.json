@@ -1,0 +1,104 @@
+{
+  "preset": "academic",
+  "site": {
+    "title": "Amirmahdi Namjoo",
+    "brand": "A. Namjoo",
+    "author": "Amirmahdi Namjoo",
+    "description": "Amirmahdi Namjoo — Ph.D. student in Computer Science working on computer architecture, systems, and high-performance computing.",
+    "lang": "en",
+    "favicon": "🎓",
+    "base_url": "",
+    "base_path": "/",
+    "custom_domain": null,
+    "custom_css": true,
+    "cv": "assets/files/cv.pdf",
+    "social": [
+      { "label": "Email", "url": "mailto:amirm137878@gmail.com", "glyph": "@", "handle": "Email" },
+      { "label": "GitHub", "url": "https://github.com/titansarus", "glyph": "GH", "handle": "github.com/titansarus" },
+      { "label": "Google Scholar", "url": "https://scholar.google.com/citations?user=", "glyph": "GS", "handle": "Google Scholar" },
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/amirmahdi-namjoo-23b4b9192/", "glyph": "in", "handle": "LinkedIn" },
+      { "label": "Telegram", "url": "https://t.me/amir_astrophysics", "glyph": "TG", "handle": "Telegram" }
+    ]
+  },
+  "theme": { "default": "system", "accent": "blue" },
+  "math": true,
+  "feed": { "enabled": true, "collection": "blog", "title": "Amirmahdi Namjoo — Blog" },
+
+  "collections": {
+    "publications": {
+      "label": "Publications", "slug": "publications", "source": "content/publications.json",
+      "type": "publication-list", "schema": "publication_item",
+      "sort_by": "year", "sort_order": "desc", "detail_pages": false
+    },
+    "experience": {
+      "label": "Experience", "slug": "experience", "source": "content/experience.json",
+      "type": "timeline", "schema": "timeline_item",
+      "sort_by": "start_date", "sort_order": "desc", "group_by": "category", "detail_pages": false
+    },
+    "awards": {
+      "label": "Honors & Awards", "slug": "awards", "source": "content/awards.json",
+      "type": "timeline", "schema": "timeline_item",
+      "sort_by": "date", "sort_order": "desc", "detail_pages": false
+    },
+    "projects": {
+      "label": "Projects", "slug": "projects", "source": "content/projects.json",
+      "type": "cards", "schema": "project_item",
+      "sort_by": "date", "sort_order": "desc", "detail_pages": true
+    },
+    "service": {
+      "label": "Academic Service", "slug": "service", "source": "content/service.json",
+      "type": "timeline", "schema": "timeline_item",
+      "sort_by": "start_date", "sort_order": "desc", "group_by": "category", "detail_pages": false
+    },
+    "blog": {
+      "label": "Blog", "slug": "blog", "source": "content/blog.json",
+      "type": "blog", "sort_by": "date", "sort_order": "desc",
+      "detail_pages": true, "detail_layout": "blog_post"
+    },
+    "personal_sections": {
+      "label": "Personal", "slug": "personal", "source": "content/personal.json",
+      "type": "markdown-sections", "schema": "markdown_item", "detail_pages": true
+    }
+  },
+
+  "homepage": {
+    "sections": [
+      { "type": "hero", "source": "content/profile.json" },
+      { "type": "news", "title": "News", "source": "content/news.json" },
+      { "type": "collection_preview", "eyebrow": "Research", "title": "Selected Publications",
+        "collection": "publications", "filter": { "selected": true }, "limit": 3, "link_to_full_page": true },
+      { "type": "collection_preview", "eyebrow": "Selected Work", "title": "Projects",
+        "collection": "projects", "filter": { "featured": true }, "limit": 3, "link_to_full_page": true },
+      { "type": "collection_preview", "eyebrow": "Experience", "title": "Experience",
+        "collection": "experience", "limit": 3, "mode": "expandable", "link_to_full_page": true },
+      { "type": "collection_preview", "eyebrow": "Outside Academia", "title": "Personal",
+        "collection": "personal_sections", "limit": 3, "link_to_full_page": true }
+    ]
+  },
+
+  "pages": [
+    { "title": "Publications", "slug": "publications", "layout": "collection_page", "collections": ["publications"] },
+    { "title": "Experience", "slug": "experience", "layout": "collection_page", "collections": ["experience", "awards"] },
+    { "title": "Projects", "slug": "projects", "layout": "collection_page", "collections": ["projects"] },
+    { "title": "Service", "slug": "service", "layout": "collection_page", "collections": ["service"] },
+    { "title": "Blog", "slug": "blog", "layout": "collection_page", "collections": ["blog"] },
+    { "title": "Personal", "slug": "personal", "layout": "collection_page", "collections": ["personal_sections"] }
+  ],
+
+  "environments": {
+    "github-pages": {
+      "site": {
+        "base_url": "https://titansarus.github.io",
+        "base_path": "/amirmahdinamjoo-site/",
+        "custom_domain": null
+      }
+    },
+    "production": {
+      "site": {
+        "base_url": "https://amirmahdinamjoo.com",
+        "base_path": "/",
+        "custom_domain": "amirmahdinamjoo.com"
+      }
+    }
+  }
+}

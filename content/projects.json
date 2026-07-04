@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Academic Site Generator",
+    "date": "2026-07",
+    "featured": true,
+    "summary": "A reusable Python static site generator with generic collections, pages, and components plus an academic preset — the engine that builds this website.",
+    "technologies": ["Python", "Jinja2", "Markdown", "YAML"],
+    "body": "markdown/projects/academic-site-generator.md",
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus" }]
+  },
+  {
+    "title": "Arno — Service Requesting Platform",
+    "date": "2022-09",
+    "featured": true,
+    "summary": "A full-stack service-request system with user, provider, and admin flows.",
+    "technologies": ["Django", "React", "Docker", "PostgreSQL"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus" }]
+  },
+  {
+    "title": "Health Monitoring System",
+    "date": "2022-08",
+    "summary": "An IoT project that collects and visualizes patient vitals from embedded sensors.",
+    "technologies": ["Raspberry Pi", "Arduino", "React Native", "Python"]
+  },
+  {
+    "title": "Multicore & GPU Computing Projects",
+    "date": "2022-08",
+    "summary": "Parallel implementations of compute-heavy kernels on CPUs and GPUs.",
+    "technologies": ["CUDA", "OpenMP", "C++"]
+  },
+  {
+    "title": "Telenurse — Healthcare Logistics",
+    "date": "2022-02",
+    "summary": "A platform connecting patients with at-home nursing and healthcare logistics.",
+    "technologies": ["Django", "React"]
+  },
+  {
+    "title": "CMinus Compiler",
+    "date": "2022-01",
+    "featured": true,
+    "summary": "A compiler for the C-minus language with scanner, parser, semantic analysis, and code generation.",
+    "technologies": ["Python", "Compilers"],
+    "body": "markdown/projects/cminus-compiler.md",
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus" }]
+  },
+  {
+    "title": "PintOS",
+    "date": "2021-05",
+    "featured": true,
+    "summary": "A multi-phase operating systems project implementing threads, user programs, and file-system features.",
+    "technologies": ["C", "PintOS", "GDB"],
+    "body": "markdown/projects/pintos.md",
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus" }]
+  },
+  {
+    "title": "Peer-to-Peer Network",
+    "date": "2021-08",
+    "summary": "A Python peer-to-peer networking project built for the Computer Networks course.",
+    "technologies": ["Python", "Sockets", "Networking"]
+  }
+]

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; }
+  * { box-sizing: border-box; }
+  a { text-decoration: none; color: inherit; }
+  button { font-family: inherit; cursor: pointer; }
+</style>
+</helmet>
+
+<div style="{{ rootStyle }}">
+
+  <header style="{{ headerStyle }}">
+    <div style="{{ headerInnerStyle }}">
+      <a href="#" style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px; letter-spacing: -0.01em; color: var(--color-text);">A. Namjoo</a>
+
+      <nav aria-label="Primary" style="{{ desktopNavStyle }}">
+        <ul style="display:flex; gap:26px; list-style:none; margin:0; padding:0; align-items:center;">
+          <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="8">
+            <li>
+              <a href="{{ link.href }}" style="{{ link.linkStyle }}">{{ link.label }}</a>
+            </li>
+          </sc-for>
+        </ul>
+      </nav>
+
+      <div style="{{ desktopControlsStyle }}">
+        <button aria-pressed="{{ isDark }}" aria-label="Toggle dark mode" onclick="{{ toggleTheme }}" style="display:flex; align-items:center; gap:8px; background:none; border:none; padding:4px; color: var(--color-text-muted); font-size:12.5px; font-family: 'IBM Plex Mono', monospace;">
+          <span>{{ themeLabel }}</span>
+          <span style="{{ toggleTrackStyle }}">
+            <span style="{{ toggleKnobStyle }}"></span>
+          </span>
+        </button>
+        <a href="#" style="{{ cvButtonStyle }}">View CV</a>
+      </div>
+
+      <div style="{{ mobileControlsStyle }}">
+        <button aria-pressed="{{ isDark }}" aria-label="Toggle dark mode" onclick="{{ toggleTheme }}" style="display:flex; align-items:center; background:none; border:none; padding:4px;">
+          <span style="{{ toggleTrackStyle }}">
+            <span style="{{ toggleKnobStyle }}"></span>
+          </span>
+        </button>
+        <button aria-expanded="{{ mobileMenuOpen }}" aria-label="Toggle menu" onclick="{{ toggleMobileMenu }}" style="display:flex; flex-direction:column; justify-content:center; gap:5px; width:32px; height:32px; background:none; border:1px solid var(--color-border); border-radius:6px; padding:0; align-items:center;">
+          <span style="width:16px; height:1.5px; background:var(--color-text);"></span>
+          <span style="width:16px; height:1.5px; background:var(--color-text);"></span>
+        </button>
+      </div>
+    </div>
+
+    <sc-if value="{{ showMobileMenu }}" hint-placeholder-val="{{ false }}">
+      <nav aria-label="Mobile" style="border-top:1px solid var(--color-border); background: var(--color-surface); padding: 8px 20px 16px;">
+        <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px;">
+          <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="8">
+            <li>
+              <a href="{{ link.href }}" style="{{ link.mobileLinkStyle }}">{{ link.label }}</a>
+            </li>
+          </sc-for>
+        </ul>
+      </nav>
+    </sc-if>
+  </header>
+
+  <main>
+
+    <section style="background: var(--color-surface); border-bottom: 1px solid var(--color-border);">
+      <div style="{{ introContainerStyle }}">
+        <div style="{{ introGridStyle }}">
+
+          <div style="{{ heroColStyle }}">
+            <div style="{{ photoStyle }}">
+              <span style="font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--color-text-muted); text-align:center; line-height:1.4;">portrait<br/>placeholder</span>
+            </div>
+
+            <h1 style="font-size: {{ heroNameSize }}; font-weight: 700; letter-spacing:-0.02em; margin: 18px 0 6px; color: var(--color-text);">Amirmahdi Namjoo</h1>
+            <p style="font-size:17px; font-weight:500; margin:0 0 3px; color: var(--color-text);">Ph.D. Student in Electrical and Computer Engineering</p>
+            <p style="font-size:14.5px; margin:0 0 16px; color: var(--color-accent); font-family:'IBM Plex Mono', monospace;">University of Southern California</p>
+            <p style="font-size:15.5px; line-height:1.7; color: var(--color-text-muted); margin: 0 0 22px;">I work on computer architecture, systems, and AI-assisted scientific computing, with interests in efficient computing systems, formal reasoning, and machine learning for systems.</p>
+
+            <div style="{{ heroButtonsRowStyle }}">
+              <a href="#" style="{{ cvButtonStyle }}">View CV</a>
+              <sc-for list="{{ socialIcons }}" as="icon" hint-placeholder-count="3">
+                <a href="{{ icon.href }}" title="{{ icon.label }}" aria-label="{{ icon.label }}" style="{{ chipStyle }}">
+                  <span style="{{ chipIconStyle }}">{{ icon.glyph }}</span>
+                  <span style="font-family:'IBM Plex Mono', monospace; font-size:12.5px;">{{ icon.handle }}</span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="{{ infoColStyle }}">
+            <div>
+              <p style="{{ eyebrowStyle }}">About</p>
+              <p style="font-size:16px; line-height:1.75; color: var(--color-text); margin:0;">I am a Ph.D. student in Electrical and Computer Engineering at the University of Southern California. My interests include computer architecture, systems, high-performance computing, AI-assisted scientific computing, and formal methods. Previously, I studied at the University of Maryland and Sharif University of Technology.</p>
+            </div>
+
+            <div>
+              <p style="{{ eyebrowStyle }}">Research Interests</p>
+              <ul style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:9px;">
+                <sc-for list="{{ researchInterests }}" as="tag" hint-placeholder-count="7">
+                  <li style="font-family:'IBM Plex Mono', monospace; font-size:12.5px; white-space:nowrap; flex-shrink:0; color: var(--color-text-muted); border:1px solid var(--color-border); border-radius:999px; padding:5px 13px; background: var(--color-bg);">{{ tag }}</li>
+                </sc-for>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" style="{{ sectionStyleWide }}">
+      <p style="{{ eyebrowStyle }}">Selected Publications</p>
+      <h2 style="{{ headingStyle }}">Publications</h2>
+      <div style="display:flex; flex-direction:column; margin-top:18px;">
+        <sc-for list="{{ publications }}" as="pub" hint-placeholder-count="3">
+          <div style="padding: 22px 0; border-bottom: 1px solid var(--color-border);">
+            <p style="font-size:16.5px; font-weight:600; line-height:1.5; margin:0 0 6px; color: var(--color-text);">{{ pub.title }}</p>
+            <p style="font-size:14.5px; color: var(--color-text-muted); margin:0 0 8px;">{{ pub.authors }}</p>
+            <p style="font-family:'IBM Plex Mono', monospace; font-size:12.5px; color: var(--color-accent); margin:0 0 12px;">{{ pub.venue }}</p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+              <sc-for list="{{ pub.linksList }}" as="lnk" hint-placeholder-count="3">
+                <a href="{{ lnk.href }}" style="{{ lnk.style }}">{{ lnk.label }}</a>
+              </sc-for>
+              <sc-if value="{{ pub.hasBibtex }}" hint-placeholder-val="{{ false }}">
+                <button onclick="{{ pub.toggleBibtex }}" aria-expanded="{{ pub.bibtexOpen }}" style="{{ pub.bibtexButtonStyle }}">{{ pub.bibtexLabel }}</button>
+              </sc-if>
+            </div>
+            <sc-if value="{{ pub.bibtexOpen }}" hint-placeholder-val="{{ false }}">
+              <pre style="margin: 14px 0 0; padding: 14px 16px; background: var(--color-surface-muted); border:1px solid var(--color-border); border-radius:8px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; line-height:1.6; color: var(--color-text-muted); overflow-x:auto; white-space:pre-wrap;">{{ pub.bibtex }}</pre>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <a href="#" style="{{ viewAllLinkStyle }}">View all publications →</a>
+    </section>
+
+    <section id="projects" style="{{ sectionStyleWide }}">
+      <p style="{{ eyebrowStyle }}">Selected Projects</p>
+      <h2 style="{{ headingStyle }}">Projects</h2>
+      <div style="{{ projectsGridStyle }}">
+        <sc-for list="{{ projects }}" as="proj" hint-placeholder-count="3">
+          <div style="{{ cardStyle }}">
+            <div style="{{ thumbnailStyle }}">
+              <span style="font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--color-text-muted);">project thumbnail</span>
+            </div>
+            <p style="font-size:16px; font-weight:600; margin:0 0 8px; color: var(--color-text);">{{ proj.title }}</p>
+            <p style="font-size:14.5px; line-height:1.6; color: var(--color-text-muted); margin:0 0 14px; flex-grow:1;">{{ proj.summary }}</p>
+            <sc-if value="{{ proj.technologies }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;">
+                <sc-for list="{{ proj.technologies }}" as="tech" hint-placeholder-count="3">
+                  <span style="font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--color-text-muted); border:1px solid var(--color-border); border-radius:999px; padding:3px 10px;">{{ tech }}</span>
+                </sc-for>
+              </div>
+            </sc-if>
+            <div style="display:flex; gap:10px; margin-top:auto;">
+              <sc-for list="{{ proj.linksList }}" as="lnk" hint-placeholder-count="2">
+                <a href="{{ lnk.href }}" style="{{ lnk.style }}">{{ lnk.label }}</a>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <a href="#" style="{{ viewAllLinkStyle }}">View all projects →</a>
+    </section>
+
+    <section id="experience" style="{{ sectionStyleWide }}">
+      <p style="{{ eyebrowStyle }}">Experience</p>
+      <h2 style="{{ headingStyle }}">Where I've Worked</h2>
+
+      <div style="margin-top:8px;">
+        <sc-for list="{{ experienceGroups }}" as="group" hint-placeholder-count="2">
+          <div>
+            <p style="{{ groupHeadingStyle }}">{{ group.category }}</p>
+            <sc-for list="{{ group.items }}" as="exp" hint-placeholder-count="2">
+              <div style="display:flex; gap:16px; padding: 16px 0; border-bottom: 1px solid var(--color-border);">
+                <sc-if value="{{ exp.logoInitials }}" hint-placeholder-val="{{ false }}">
+                  <div style="{{ logoStyle }}">{{ exp.logoInitials }}</div>
+                </sc-if>
+                <div style="flex:1;">
+                  <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px;">
+                    <p style="font-size:15.5px; font-weight:600; margin:0; color: var(--color-text);">{{ exp.title }} <span style="font-weight:400; color: var(--color-text-muted);">· {{ exp.org }}</span></p>
+                    <sc-if value="{{ exp.dateRange }}" hint-placeholder-val="{{ true }}">
+                      <span style="font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--color-text-muted); white-space:nowrap;">{{ exp.dateRange }}</span>
+                    </sc-if>
+                  </div>
+                  <sc-if value="{{ exp.summary }}" hint-placeholder-val="{{ true }}">
+                    <p style="font-size:14.5px; line-height:1.6; color: var(--color-text-muted); margin: 8px 0 0;">{{ exp.summary }}</p>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+
+        <sc-if value="{{ experienceExpanded }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <sc-for list="{{ experienceMoreGroups }}" as="group" hint-placeholder-count="1">
+              <div>
+                <p style="{{ groupHeadingStyle }}">{{ group.category }}</p>
+                <sc-for list="{{ group.items }}" as="exp" hint-placeholder-count="1">
+                  <div style="display:flex; gap:16px; padding: 14px 0; border-bottom: 1px solid var(--color-border);">
+                    <sc-if value="{{ exp.logoInitials }}" hint-placeholder-val="{{ false }}">
+                      <div style="{{ logoStyle }}">{{ exp.logoInitials }}</div>
+                    </sc-if>
+                    <div style="flex:1;">
+                      <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px;">
+                        <p style="font-size:14.5px; font-weight:600; margin:0; color: var(--color-text);">{{ exp.title }} <span style="font-weight:400; color: var(--color-text-muted);">· {{ exp.org }}</span></p>
+                        <sc-if value="{{ exp.dateRange }}" hint-placeholder-val="{{ false }}">
+                          <span style="font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--color-text-muted); white-space:nowrap;">{{ exp.dateRange }}</span>
+                        </sc-if>
+                      </div>
+                      <sc-if value="{{ exp.summary }}" hint-placeholder-val="{{ false }}">
+                        <p style="font-size:13.5px; line-height:1.6; color: var(--color-text-muted); margin: 6px 0 0;">{{ exp.summary }}</p>
+                      </sc-if>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-top:20px; flex-wrap:wrap; gap:12px;">
+        <button onclick="{{ toggleExperience }}" aria-expanded="{{ experienceExpanded }}" style="{{ seeMoreButtonStyle }}">
+          {{ seeMoreLabel }}
+          <span style="{{ chevronStyle }}">⌄</span>
+        </button>
+        <a href="#" style="{{ viewAllLinkStyle }}">View full experience page →</a>
+      </div>
+    </section>
+
+    <section id="personal" style="{{ sectionStyleWide }}">
+      <p style="{{ eyebrowStyle }}">Outside Academia</p>
+      <h2 style="{{ headingStyle }}">Personal Notes</h2>
+      <div style="{{ personalGridStyle }}">
+        <sc-for list="{{ personalNotes }}" as="note" hint-placeholder-count="3">
+          <a href="{{ note.href }}" style="{{ personalCardStyle }}">
+            <p style="font-size:15px; font-weight:600; margin:0 0 6px; color: var(--color-text);">{{ note.title }}</p>
+            <p style="font-size:13.5px; line-height:1.6; color: var(--color-text-muted); margin:0;">{{ note.text }}</p>
+          </a>
+        </sc-for>
+      </div>
+      <a href="#" style="{{ viewAllLinkStyle }}">View personal page →</a>
+    </section>
+
+  </main>
+
+  <footer style="background: var(--color-surface-muted); border-top: 1px solid var(--color-border);">
+    <div style="{{ footerContainerStyle }}">
+      <div style="{{ footerInnerStyle }}">
+        <div>
+          <p style="font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:14px; margin:0 0 6px; color: var(--color-text);">Amirmahdi Namjoo</p>
+          <p style="font-size:13px; color: var(--color-text-muted); margin:0;">© 2026 Amirmahdi Namjoo. Built with a custom Python static site generator.</p>
+          <p style="font-size:12px; color: var(--color-text-muted); margin:6px 0 0;">Last updated: July 2026</p>
+        </div>
+        <ul style="list-style:none; display:flex; flex-wrap:wrap; gap:18px; margin:0; padding:0;">
+          <sc-for list="{{ footerSocial }}" as="s" hint-placeholder-count="5">
+            <li>
+              <a href="{{ s.href }}" title="{{ s.label }}" aria-label="{{ s.label }}" style="{{ footerChipStyle }}">
+                <span style="{{ footerIconStyle }}">{{ s.glyph }}</span>
+                <span style="font-family:'IBM Plex Mono', monospace; font-size:12px;">{{ s.handle }}</span>
+              </a>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 1440, &quot;height&quot;: 1800},
+  &quot;theme&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;light&quot;, &quot;options&quot;: [&quot;light&quot;, &quot;dark&quot;], &quot;tsType&quot;: &quot;'light'|'dark'&quot;, &quot;section&quot;: &quot;Theme&quot;},
+  &quot;accentColor&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#2563eb&quot;, &quot;options&quot;: [&quot;#2563eb&quot;, &quot;#0ea5e9&quot;, &quot;#4f46e5&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Theme&quot;},
+  &quot;density&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;balanced&quot;, &quot;options&quot;: [&quot;compact&quot;, &quot;balanced&quot;, &quot;spacious&quot;], &quot;tsType&quot;: &quot;'compact'|'balanced'|'spacious'&quot;, &quot;section&quot;: &quot;Layout&quot;}
+}">
+class Component extends DCLogic {
+  state = { mobileMenuOpen: false, experienceExpanded: false, openBibtex: {} };
+
+  navLinks = [
+    { label: 'Home', href: '#', active: true },
+    { label: 'Publications', href: '#publications' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Service', href: '#' },
+    { label: 'Blog', href: '#' },
+    { label: 'Personal', href: '#personal' },
+    { label: 'CV', href: '#' },
+  ];
+
+  researchInterests = [
+    'Computer Architecture',
+    'Systems',
+    'High-Performance Computing',
+    'Machine Learning for Systems',
+    'AI Agents for Scientific Computing',
+    'Formal Methods',
+    'Scientific AI',
+  ];
+
+  newsItems = [
+    { date: 'Jul 2026', text: 'Started redesigning this website using a custom Python static site generator.' },
+    { date: 'Jun 2026', text: 'Joined the University of Southern California as an incoming Ph.D. student.' },
+    { date: 'May 2026', text: 'Completed M.S. degree requirements at the University of Maryland.' },
+    { date: '2025', text: 'Paper accepted at MICRO 2025.', href: '#publications' },
+  ];
+
+  rawPublications = [
+    {
+      title: 'Chasoń: Supporting Cross HBM Channel Data Migration to Enable Efficient Sparse Algebraic Acceleration',
+      authors: 'Ubaid Bakhtiar, Amirmahdi Namjoo, Bahar Asgari',
+      venue: 'MICRO 2025',
+      pdf: '#', bibtex: '@inproceedings{bakhtiar2025chason,\n  title={Chason: Supporting Cross HBM Channel Data Migration to Enable Efficient Sparse Algebraic Acceleration},\n  author={Bakhtiar, Ubaid and Namjoo, Amirmahdi and Asgari, Bahar},\n  booktitle={MICRO},\n  year={2025}\n}', project: '#',
+    },
+    {
+      title: 'Placeholder Study on Efficient Sparse Computation for Scientific Workloads',
+      authors: 'Amirmahdi Namjoo, Bahar Asgari',
+      venue: 'Workshop on Systems for ML, 2025',
+      pdf: '#', doi: '#',
+    },
+    {
+      title: 'Placeholder Work on Formal Reasoning for Hardware Verification',
+      authors: 'Amirmahdi Namjoo, et al.',
+      venue: 'Preprint, 2026',
+      bibtex: '@misc{namjoo2026formal,\n  title={Placeholder Work on Formal Reasoning for Hardware Verification},\n  author={Namjoo, Amirmahdi and others},\n  year={2026}\n}', code: '#',
+    },
+  ];
+
+  rawProjects = [
+    {
+      title: 'PintOS',
+      summary: 'A multi-phase operating systems project implementing user programs, threading, and file system features.',
+      technologies: ['C', 'PintOS', 'GDB'],
+      github: '#', details: '#',
+    },
+    {
+      title: 'AI-Assisted Prover Routing',
+      summary: 'A research prototype for routing theorem-proving tasks between symbolic tools, specialized prover models, and frontier LLMs.',
+      technologies: ['Python', 'Lean 4', 'LLMs'],
+      details: '#',
+    },
+    {
+      title: 'Academic Site Generator',
+      summary: 'A small Python static site generator for structured academic personal websites using JSON/YAML and Markdown.',
+      technologies: ['Python', 'Jinja2', 'Markdown', 'YAML'],
+      github: '#', details: '#',
+    },
+  ];
+
+  experienceMain = [
+    { category: 'Research', title: 'Graduate Research Assistant', org: 'University of Southern California', dateRange: 'Aug 2026 – Present', summary: 'Researching efficient computing systems and AI-assisted scientific computing.', logoInitials: 'USC' },
+    { category: 'Research', title: 'Graduate Research Assistant', org: 'University of Maryland', dateRange: '2024 – 2026', summary: 'Worked on computer architecture and systems research.', logoInitials: 'UMD' },
+    { category: 'Teaching', title: 'Teaching Assistant', org: 'University of Maryland', dateRange: '2024 – 2025', summary: 'Teaching assistant for computer engineering / systems-related courses.' },
+    { category: 'Teaching', title: 'Teaching Assistant', org: 'Sharif University of Technology', dateRange: '2021 – 2023', summary: 'Teaching assistant and head teaching assistant for multiple computer engineering courses.' },
+  ];
+
+  experienceMore = [
+    { category: 'Work / Industry', title: 'Software Engineering / Technical Experience', org: 'Placeholder Organization' },
+  ];
+
+  personalNotes = [
+    { title: 'Books and Notes', text: 'Casual notes on books, ideas, and things I have been reading.', href: '#' },
+    { title: 'Games', text: 'A small informal page about games I like or have played.', href: '#' },
+    { title: 'Random Notes', text: 'Loose personal notes and informal writing.', href: '#' },
+  ];
+
+  footerSocial = [
+    { label: 'Email', href: 'mailto:name@usc.edu', glyph: '✉', handle: 'name@usc.edu' },
+    { label: 'Google Scholar', href: '#', glyph: 'GS', handle: 'scholar.google.com' },
+    { label: 'GitHub', href: '#', glyph: 'GH', handle: 'github.com/amirmahdinamjoo' },
+    { label: 'LinkedIn', href: '#', glyph: 'LN', handle: 'linkedin.com/in/amirmahdinamjoo' },
+    { label: 'CV', href: '#', glyph: 'CV', handle: 'View CV (PDF)' },
+  ];
+
+  accentPalette = {
+    '#2563eb': { softLight: '#dbeafe', softDark: '#1e3a5f' },
+    '#0ea5e9': { softLight: '#e0f2fe', softDark: '#0c4a6e' },
+    '#4f46e5': { softLight: '#e0e7ff', softDark: '#312e81' },
+  };
+
+  componentDidMount() {
+    this.updateIsMobile = () => this.setState({ isMobile: window.innerWidth < 900 });
+    this.updateIsMobile();
+    window.addEventListener('resize', this.updateIsMobile);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateIsMobile);
+  }
+
+  toggleTheme = () => {
+    const current = this.state.theme ?? this.props.theme ?? 'light';
+    this.setState({ theme: current === 'light' ? 'dark' : 'light' });
+  };
+
+  toggleMobileMenu = () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen }));
+  toggleExperience = () => this.setState(s => ({ experienceExpanded: !s.experienceExpanded }));
+  toggleBibtex = (id) => this.setState(s => ({ openBibtex: { ...s.openBibtex, [id]: !s.openBibtex[id] } }));
+
+  renderVals() {
+    const theme = this.state.theme ?? this.props.theme ?? 'light';
+    const isDark = theme === 'dark';
+    const isMobile = !!this.state.isMobile;
+    const accent = this.props.accentColor ?? '#2563eb';
+    const palette = this.accentPalette[accent] ?? this.accentPalette['#2563eb'];
+    const density = this.props.density ?? 'balanced';
+    const spacingMap = {
+      compact: { section: 40, gap: 14, card: 16 },
+      balanced: { section: 64, gap: 20, card: 22 },
+      spacious: { section: 88, gap: 28, card: 28 },
+    };
+    const sp = spacingMap[density] ?? spacingMap.balanced;
+    const hPad = isMobile ? 20 : 32;
+
+    const colors = isDark
+      ? { bg: '#0f172a', surface: '#111827', surfaceMuted: '#1e293b', text: '#e5e7eb', textMuted: '#94a3b8', border: '#334155', accentSoft: palette.softDark }
+      : { bg: '#f7f9fc', surface: '#ffffff', surfaceMuted: '#f1f5f9', text: '#172033', textMuted: '#64748b', border: '#d8e1ee', accentSoft: palette.softLight };
+
+    const rootStyle = {
+      '--color-bg': colors.bg,
+      '--color-surface': colors.surface,
+      '--color-surface-muted': colors.surfaceMuted,
+      '--color-text': colors.text,
+      '--color-text-muted': colors.textMuted,
+      '--color-border': colors.border,
+      '--color-accent': accent,
+      '--color-accent-soft': colors.accentSoft,
+      fontFamily: "'IBM Plex Sans', system-ui, sans-serif",
+      background: 'var(--color-bg)',
+      color: 'var(--color-text)',
+      minHeight: '100vh',
+      transition: 'background .25s ease, color .25s ease',
+    };
+
+    const headerStyle = {
+      position: 'sticky', top: 0, zIndex: 20,
+      background: 'var(--color-surface)',
+      borderBottom: '1px solid var(--color-border)',
+      backdropFilter: 'blur(8px)',
+    };
+    const headerInnerStyle = {
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      maxWidth: '1080px', margin: '0 auto', padding: `0 ${hPad}px`, height: '60px',
+    };
+
+    const navLinks = this.navLinks.map((l) => ({
+      ...l,
+      linkStyle: {
+        fontSize: '14px',
+        color: l.active ? 'var(--color-text)' : 'var(--color-text-muted)',
+        fontWeight: l.active ? 600 : 400,
+        borderBottom: l.active ? '2px solid var(--color-accent)' : '2px solid transparent',
+        paddingBottom: '4px',
+      },
+      mobileLinkStyle: {
+        display: 'block', padding: '10px 6px', fontSize: '15px',
+        color: l.active ? 'var(--color-accent)' : 'var(--color-text)',
+        fontWeight: l.active ? 600 : 400,
+      },
+    }));
+
+    const desktopNavStyle = { display: isMobile ? 'none' : 'block' };
+    const desktopControlsStyle = { display: isMobile ? 'none' : 'flex', alignItems: 'center', gap: '14px' };
+    const mobileControlsStyle = { display: isMobile ? 'flex' : 'none', alignItems: 'center', gap: '8px' };
+    const showMobileMenu = isMobile && this.state.mobileMenuOpen;
+
+    const toggleTrackStyle = {
+      width: '38px', height: '21px', borderRadius: '999px',
+      background: isDark ? 'var(--color-accent)' : 'var(--color-border)',
+      position: 'relative', display: 'inline-block', transition: 'background .2s ease',
+    };
+    const toggleKnobStyle = {
+      position: 'absolute', top: '2px', left: isDark ? '19px' : '2px',
+      width: '17px', height: '17px', borderRadius: '50%', background: '#ffffff',
+      transition: 'left .2s ease', boxShadow: '0 1px 2px rgba(0,0,0,0.25)',
+    };
+    const themeLabel = isDark ? 'Dark' : 'Light';
+
+    const cvButtonStyle = {
+      fontSize: '13.5px', fontWeight: 600, color: '#ffffff', background: 'var(--color-accent)',
+      padding: '9px 16px', borderRadius: '7px', whiteSpace: 'nowrap',
+    };
+    const secondaryButtonStyle = {
+      fontSize: '13.5px', fontWeight: 500, color: 'var(--color-text)', background: 'transparent',
+      border: '1px solid var(--color-border)', padding: '8px 15px', borderRadius: '7px', whiteSpace: 'nowrap',
+    };
+    const socialIcons = [
+      { label: 'Google Scholar', glyph: 'GS', href: '#', handle: 'scholar.google.com' },
+      { label: 'GitHub', glyph: 'GH', href: '#', handle: 'github.com/amirmahdinamjoo' },
+      { label: 'Email', glyph: '✉', href: 'mailto:name@usc.edu', handle: 'name@usc.edu' },
+    ];
+    const chipStyle = {
+      display: 'flex', alignItems: 'center', gap: '9px',
+      border: '1px solid var(--color-border)', borderRadius: '999px', padding: '5px 14px 5px 5px',
+      color: 'var(--color-text)', background: 'transparent',
+    };
+    const chipIconStyle = {
+      width: '28px', height: '28px', minWidth: '28px', borderRadius: '50%', background: 'var(--color-surface-muted)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      fontFamily: "'IBM Plex Mono', monospace", fontSize: '11.5px', fontWeight: 600,
+      color: 'var(--color-text-muted)',
+    };
+    const footerChipStyle = {
+      display: 'flex', alignItems: 'center', gap: '7px', color: 'var(--color-text-muted)',
+    };
+    const footerIconStyle = {
+      width: '22px', height: '22px', minWidth: '22px', borderRadius: '50%', border: '1px solid var(--color-border)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      fontFamily: "'IBM Plex Mono', monospace", fontSize: '9.5px', fontWeight: 600,
+      color: 'var(--color-text-muted)',
+    };
+
+    const introContainerStyle = {
+      maxWidth: '1080px', margin: '0 auto', padding: `${sp.section}px ${hPad}px`,
+    };
+    const introGridStyle = {
+      display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'minmax(240px, 300px) 1fr',
+      gap: isMobile ? '36px' : '64px', alignItems: 'start',
+    };
+    const heroColStyle = {
+      display: 'flex', flexDirection: 'column',
+      alignItems: isMobile ? 'center' : 'flex-start',
+      textAlign: isMobile ? 'center' : 'left',
+    };
+    const heroNameSize = isMobile ? '30px' : '32px';
+    const photoStyle = {
+      width: '132px', height: '132px', minWidth: '132px', borderRadius: '50%',
+      background: 'repeating-linear-gradient(135deg, var(--color-surface-muted), var(--color-surface-muted) 8px, var(--color-bg) 8px, var(--color-bg) 16px)',
+      border: '1px solid var(--color-border)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    };
+    const heroButtonsRowStyle = { display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: isMobile ? 'center' : 'flex-start' };
+    const infoColStyle = {
+      display: 'flex', flexDirection: 'column', gap: `${sp.gap + 16}px`,
+      paddingTop: isMobile ? 0 : '4px',
+    };
+    const eyebrowStyle = {
+      fontFamily: "'IBM Plex Mono', monospace", fontSize: '12px', fontWeight: 600,
+      letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--color-accent)', margin: '0 0 10px',
+    };
+
+    const sectionStyleWide = { maxWidth: '1080px', margin: '0 auto', padding: `${sp.section}px ${hPad}px` };
+    const headingStyle = { fontSize: '23px', fontWeight: 600, letterSpacing: '-0.01em', margin: 0, color: 'var(--color-text)' };
+    const viewAllLinkStyle = { display: 'inline-block', marginTop: '18px', fontSize: '14px', fontWeight: 600, color: 'var(--color-accent)' };
+
+    const pillLinkStyle = {
+      fontSize: '13px', fontWeight: 500, color: 'var(--color-accent)',
+      border: '1px solid var(--color-border)', borderRadius: '999px', padding: '5px 13px',
+    };
+
+    const publications = this.rawPublications.map((pub, i) => {
+      const links = [];
+      if (pub.pdf) links.push({ label: 'PDF', href: pub.pdf, style: pillLinkStyle });
+      if (pub.code) links.push({ label: 'Code', href: pub.code, style: pillLinkStyle });
+      if (pub.project) links.push({ label: 'Project', href: pub.project, style: pillLinkStyle });
+      if (pub.doi) links.push({ label: 'DOI', href: pub.doi, style: pillLinkStyle });
+      const id = 'pub-' + i;
+      const bibtexOpen = !!this.state.openBibtex[id];
+      return {
+        ...pub,
+        linksList: links,
+        hasBibtex: !!pub.bibtex,
+        bibtexOpen,
+        bibtexLabel: bibtexOpen ? 'Hide BibTeX' : 'BibTeX',
+        toggleBibtex: () => this.toggleBibtex(id),
+        bibtexButtonStyle: {
+          ...pillLinkStyle, background: bibtexOpen ? 'var(--color-accent-soft)' : 'transparent', border: '1px solid var(--color-border)',
+        },
+      };
+    });
+
+    const cardStyle = {
+      display: 'flex', flexDirection: 'column',
+      background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: '12px',
+      padding: `${sp.card}px`, transition: 'transform .15s ease, box-shadow .15s ease',
+    };
+    const thumbnailStyle = {
+      height: '96px', borderRadius: '8px', marginBottom: '16px',
+      background: 'repeating-linear-gradient(135deg, var(--color-surface-muted), var(--color-surface-muted) 10px, var(--color-bg) 10px, var(--color-bg) 20px)',
+      border: '1px solid var(--color-border)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    };
+    const projectsGridStyle = { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: `${sp.gap}px`, marginTop: '18px', marginBottom: '4px' };
+
+    const projects = this.rawProjects.map((proj) => {
+      const links = [];
+      if (proj.github) links.push({ label: 'GitHub', href: proj.github, style: pillLinkStyle });
+      if (proj.details) links.push({ label: 'Details', href: proj.details, style: pillLinkStyle });
+      return { ...proj, linksList: links };
+    });
+
+    const logoStyle = {
+      width: '38px', height: '38px', minWidth: '38px', borderRadius: '8px',
+      background: 'var(--color-accent-soft)', color: 'var(--color-accent)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      fontFamily: "'IBM Plex Mono', monospace", fontSize: '11px', fontWeight: 600,
+    };
+
+    const groupHeadingStyle = {
+      fontFamily: "'IBM Plex Mono', monospace", fontSize: '11.5px', fontWeight: 600,
+      letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--color-accent)',
+      margin: '22px 0 6px',
+    };
+    const groupByCategory = (items) => {
+      const order = [];
+      const map = {};
+      items.forEach((item) => {
+        if (!map[item.category]) { map[item.category] = []; order.push(item.category); }
+        map[item.category].push(item);
+      });
+      return order.map((category) => ({ category, items: map[category] }));
+    };
+    const experienceGroups = groupByCategory(this.experienceMain);
+    const experienceMoreGroups = groupByCategory(this.experienceMore);
+
+    const seeMoreButtonStyle = {
+      display: 'flex', alignItems: 'center', gap: '6px', background: 'none', border: 'none', padding: 0,
+      fontSize: '14px', fontWeight: 600, color: 'var(--color-accent)',
+    };
+    const chevronStyle = {
+      display: 'inline-block', transform: this.state.experienceExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
+      transition: 'transform .2s ease', fontSize: '16px', lineHeight: 1,
+    };
+    const seeMoreLabel = this.state.experienceExpanded ? 'See less experience' : 'See more experience';
+
+    const personalGridStyle = { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: `${sp.gap}px`, marginTop: '18px', marginBottom: '4px' };
+    const personalCardStyle = {
+      display: 'block', background: 'var(--color-surface)', border: '1px solid var(--color-border)',
+      borderRadius: '12px', padding: `${sp.card}px`,
+    };
+
+    const footerContainerStyle = { maxWidth: '1080px', margin: '0 auto', padding: `28px ${hPad}px` };
+    const footerInnerStyle = {
+      display: 'flex', flexDirection: isMobile ? 'column' : 'row',
+      justifyContent: 'space-between', alignItems: isMobile ? 'flex-start' : 'center', gap: '16px',
+    };
+
+    return {
+      rootStyle, isDark, themeLabel, toggleTheme: this.toggleTheme, toggleTrackStyle, toggleKnobStyle,
+      headerStyle, headerInnerStyle, desktopNavStyle, desktopControlsStyle, mobileControlsStyle,
+      navLinks, mobileMenuOpen: this.state.mobileMenuOpen, toggleMobileMenu: this.toggleMobileMenu, showMobileMenu,
+      cvButtonStyle, secondaryButtonStyle, socialIcons, chipStyle, chipIconStyle, footerChipStyle, footerIconStyle,
+      introContainerStyle, introGridStyle, heroColStyle, heroNameSize, photoStyle, heroButtonsRowStyle, infoColStyle,
+      eyebrowStyle, researchInterests: this.researchInterests,
+      sectionStyleWide, headingStyle, viewAllLinkStyle,
+      publications,
+      cardStyle, thumbnailStyle, projectsGridStyle, projects,
+      experienceGroups, experienceMoreGroups, groupHeadingStyle,
+      experienceExpanded: this.state.experienceExpanded, toggleExperience: this.toggleExperience, seeMoreButtonStyle, chevronStyle, seeMoreLabel,
+      logoStyle,
+      personalNotes: this.personalNotes, personalGridStyle, personalCardStyle,
+      footerSocial: this.footerSocial, footerContainerStyle, footerInnerStyle,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

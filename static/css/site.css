@@ -1,0 +1,16 @@
+/* Site-specific tweaks for amirmahdinamjoo.com.
+   Loaded after the preset's academic.css (config: site.custom_css = true),
+   so it can extend or override without forking the theme. */
+
+/* Slightly warmer, more distinct accent for this site. */
+:root { --color-accent: #2563eb; --color-accent-soft: #dbeafe; }
+[data-theme="dark"] { --color-accent: #60a5fa; --color-accent-soft: #1e3a5f; }
+
+/* A touch more presence for the hero name. */
+.hero-name { font-size: 36px; }
+
+/* Make the selected-publications area breathe a little more. */
+#publications .pub-item:first-child { padding-top: 8px; }
+
+/* Subtle lift on project cards specific to this site. */
+.project-card:hover { box-shadow: 0 6px 20px rgba(37, 99, 235, 0.10); }

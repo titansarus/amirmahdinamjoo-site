@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Graduate Research Assistant",
+    "org": "University of Maryland",
+    "category": "Research",
+    "start_date": "2023",
+    "current": true,
+    "logo_initials": "UMD",
+    "summary": "Computer architecture and systems research on hardware acceleration for sparse linear algebra and memory systems (Bahar Asgari's group)."
+  },
+  {
+    "title": "Software Engineer (Internship)",
+    "org": "Digikala",
+    "category": "Industry",
+    "start_date": "2022-06",
+    "end_date": "2022-09",
+    "logo_initials": "DK",
+    "summary": "Worked on a large-scale e-commerce platform using PHP, MySQL, Elasticsearch, Jenkins, and Swagger."
+  },
+  {
+    "title": "Teaching Assistant & Head Teaching Assistant",
+    "org": "Sharif University of Technology",
+    "category": "Teaching",
+    "start_date": "2019-09",
+    "end_date": "2023-08",
+    "logo_initials": "SUT",
+    "summary": "TA and Head TA for 15+ computer engineering courses, including Operating Systems, Artificial Intelligence, Compiler Design, Advanced Programming (Java), Computer Networks, Computer Architecture, Probability & Statistics, and Fundamentals of Programming (C)."
+  },
+  {
+    "title": "B.Sc. in Computer Engineering",
+    "org": "Sharif University of Technology",
+    "category": "Education",
+    "start_date": "2018-09",
+    "end_date": "2023-07",
+    "logo_initials": "SUT",
+    "summary": "Bachelor of Science in Computer Engineering."
+  },
+  {
+    "title": "High School Diploma, Mathematics & Physics",
+    "org": "Shahid Beheshti NODET (SAMPAD)",
+    "category": "Education",
+    "start_date": "2014",
+    "end_date": "2018",
+    "logo_initials": "NDT",
+    "summary": "National Organization for Development of Exceptional Talents (SAMPAD)."
+  }
+]

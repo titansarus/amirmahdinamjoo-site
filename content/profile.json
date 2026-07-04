@@ -1,0 +1,22 @@
+{
+  "name": "Amirmahdi Namjoo",
+  "tagline": "Ph.D. Student in Computer Science",
+  "affiliation": "University of Maryland",
+  "photo": "assets/images/profile.svg",
+  "lead": "I work on computer architecture, systems, and high-performance computing, with a focus on efficient hardware accelerators for sparse and scientific workloads.",
+  "about": "I am a Ph.D. student in Computer Science at the **University of Maryland**, where I research computer architecture and systems in Bahar Asgari's group. My work centers on hardware acceleration for sparse linear algebra, memory systems, and efficient high-performance computing. I completed my B.Sc. in Computer Engineering at **Sharif University of Technology**, where I was a teaching assistant for more than fifteen courses and active in the student scientific community.",
+  "research_interests": [
+    "Computer Architecture",
+    "Systems",
+    "High-Performance Computing",
+    "Hardware Accelerators",
+    "Operating Systems",
+    "Machine Learning for Systems"
+  ],
+  "links": [
+    { "label": "Email", "url": "mailto:amirm137878@gmail.com", "glyph": "@", "handle": "Email" },
+    { "label": "GitHub", "url": "https://github.com/titansarus", "glyph": "GH", "handle": "GitHub" },
+    { "label": "Google Scholar", "url": "https://scholar.google.com/citations?user=", "glyph": "GS", "handle": "Scholar" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/amirmahdi-namjoo-23b4b9192/", "glyph": "in", "handle": "LinkedIn" }
+  ]
+}
