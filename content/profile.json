@@ -4,6 +4,7 @@
   "affiliation": "University of Southern California",
   "photo": "assets/images/profile.jpg",
   "lead": "I am a Ph.D. student in Electrical and Computer Engineering at the University of Southern California, working on computer architecture and high-performance computing. My recent research has focused on efficient hardware accelerators for sparse computation.",
+  "now": "settling into Los Angeles, starting my Ph.D. at USC, and thinking a lot about how to make sparse and scientific computing faster.",
   "about": "I am a Ph.D. student in Electrical and Computer Engineering at the **University of Southern California**. I earned my M.Sc. in Computer Science at the **University of Maryland** (2024–2026), where I researched hardware acceleration for sparse linear algebra and memory systems in Bahar Asgari's group, and my B.Sc. in Computer Engineering at **Sharif University of Technology** (2018–2023). My interests span computer architecture, high-performance computing, operating systems, computer security and privacy, and software engineering. During my undergraduate studies I was a teaching assistant for more than fifteen courses and served as president of the Computer Engineering Students' Scientific Chapter.",
   "research_interests": [
     "Computer Security and Privacy",

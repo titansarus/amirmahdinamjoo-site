@@ -28,6 +28,29 @@ docs/DESIGN_NOTES.md    # how the reference maps to the templates
 .github/workflows/      # GitHub Pages deployment
 ```
 
+## Themes
+
+The same content is available in **two independent themes**, selected by config
+file. The content, assets, and Markdown are shared; only the preset (templates +
+CSS) differs.
+
+| | Theme1 | Theme2 |
+|---|--------|--------|
+| Config | `site.config.json` | `site.theme2.json` |
+| Preset | `academic` | `minimal` |
+| Feel | Clean, professional, card/timeline layout, blue accent | Personal single-column essay, warm paper, serif display, terracotta accent |
+
+Build each:
+
+```bash
+acadsite build --site . --output public                          # Theme1
+acadsite build --site . --config site.theme2.json --output public-theme2   # Theme2
+```
+
+Preview folders: `_site-preview/amirmahdinamjoo-site/` (Theme1) and
+`_site-preview/amirmahdinamjoo-site-theme2/` (Theme2). Serve either with
+`python -m http.server -d <folder> 8000`.
+
 ## Projects page — two designs to compare
 
 The **Projects** page (`templates/layouts/projects_showcase.html.j2`, a
