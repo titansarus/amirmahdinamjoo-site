@@ -1,18 +1,13 @@
 # Site template overrides (optional)
 
-Files here override the generator's templates by matching their relative path.
-Resolution order (first match wins):
+Files here override generator templates by matching their relative path. The
+resolution order is:
 
-1. `templates/` in this repo (here)
-2. the active preset's templates (`acadsite/presets/academic/templates/`)
-3. core templates (`acadsite/templates/core/`)
+1. `templates/` in this repository
+2. the selected preset's templates
+3. core generator templates
 
-For example, to restyle only project cards, create:
-
-```
-templates/components/project_card.html.j2
-```
-
-You do **not** need to copy the whole theme — override just the one component or
-layout you want to change. This site currently relies on the academic preset
-templates and only customizes appearance through `static/css/site.css`.
+This site currently has no template overrides or site-specific CSS. All
+presentation behavior comes from the selected generator preset. Keep it that
+way unless an override is genuinely personal rather than a reusable theme
+improvement.

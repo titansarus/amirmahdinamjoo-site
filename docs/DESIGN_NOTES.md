@@ -10,7 +10,7 @@ not load, embed, or depend on it, and its exact DOM is not copied.
 |----------------|-------------------------------|
 | IBM Plex Sans (body) + IBM Plex Mono (labels, dates, code) | `academic.css` font stacks with system fallbacks |
 | CSS custom properties for color, switchable light/dark | `:root` + `[data-theme]` variables; inline no-flash theme init in `base.html.j2` |
-| Blue accent (`#2563eb`), gray-to-white light background, slate dark background | Palette in `academic.css`; site-level tweak in `static/css/site.css` |
+| Blue accent (`#2563eb`), gray-to-white light background, slate dark background | Palette in the academic preset's `academic.css` |
 | Sticky, blurred header with brand, nav underline for active page, theme toggle, CV button | `.site-header`, `.nav-link.active`, `.theme-toggle`, `.btn-primary` |
 | Two-column hero: portrait + name/title on the left, About + research-interest pills on the right | `layouts/homepage.html.j2` hero section + `.hero-grid` |
 | Monospace "eyebrow" labels above section headings | `.eyebrow` class |
@@ -43,8 +43,8 @@ Content is sourced from the author's Hugo/Wowchemy repository
 collection model. Publications carry the real titles, authors, DOIs, links, and
 BibTeX from that repo's `cite.bib` files; experience, honors, service, and the
 15 projects reflect the real record. Current affiliation is **University of
-Maryland** (a Ph.D. student in Computer Science since Winter 2023), consistent
-with both the source repo and the co-authored MICRO/IISWC papers.
+Southern California**, where the ECE Ph.D. begins in August 2026; the M.Sc. at
+the University of Maryland spans 2024–2026.
 
 ## Icons and logos
 

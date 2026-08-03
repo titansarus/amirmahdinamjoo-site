@@ -10,7 +10,7 @@
     "base_url": "",
     "base_path": "/",
     "custom_domain": null,
-    "custom_css": true,
+    "custom_css": false,
     "cv": "assets/files/cv.pdf",
     "social": [
       { "label": "Email", "icon": "email", "url": "mailto:amirmahdi.namjoo1@gmail.com", "handle": "amirmahdi.namjoo1@gmail.com" },

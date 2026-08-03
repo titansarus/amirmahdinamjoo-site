@@ -1,9 +1,2 @@
-# The academic-site-generator (acadsite) powers this site.
-#
-# Local development (recommended): install the generator in editable mode from
-# the sibling repository instead of using this file:
-#     python -m pip install -e ../academic-site-generator
-#
-# CI / GitHub Actions: install the generator from its Git repository. Update the
-# URL/ref if the generator lives elsewhere or you want to pin a release tag.
-acadsite @ git+https://github.com/titansarus/academic-site-generator.git@main
+# The generator is installed from its immutable Git release tag in CI.
+acadsite @ git+https://github.com/titansarus/academic-site-generator.git@v0.1.0

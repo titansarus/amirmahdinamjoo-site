@@ -3,7 +3,7 @@
 The personal academic website of **Amirmahdi Namjoo**. Content is authored as
 JSON and Markdown; the site is built by the reusable
 [`acadsite`](https://github.com/titansarus/academic-site-generator) static site
-generator (the `academic` preset).
+generator.
 
 ## Structure
 
@@ -21,8 +21,7 @@ content/                # structured content (JSON)
   news.json             # homepage news list
 markdown/               # Markdown bodies for posts, projects, personal sections
 assets/                 # images, logos, files (cv.pdf)
-static/css/site.css     # site-specific style layer (extends the preset)
-templates/              # optional template overrides (see templates/README.md)
+templates/              # optional overrides; currently documentation only
 design/                 # Claude Design reference (inspiration only)
 docs/DESIGN_NOTES.md    # how the reference maps to the templates
 .github/workflows/      # GitHub Pages deployment
@@ -53,8 +52,8 @@ Preview folders: `_site-preview/amirmahdinamjoo-site/` (Theme1) and
 
 ## Projects page — two designs to compare
 
-The **Projects** page (`templates/layouts/projects_showcase.html.j2`, a
-site-level template override) currently renders the same projects in **two
+The **Projects** page selects the academic preset's reusable
+`projects_showcase` layout and currently renders the same projects in **two
 designs** so they can be compared:
 
 - **Design A — List view:** a compact horizontal list, like the experience and
@@ -63,17 +62,17 @@ designs** so they can be compared:
   empty image placeholder.
 
 Once a preferred design is chosen, set the page's `layout` back to
-`collection_page` (Design B is the default `cards` rendering) or trim the
-override to keep only the chosen section.
+`collection_page` (Design B is the default `cards` rendering), or update the
+reusable preset layout in the generator. Presentation code remains generator-owned.
 
 ## Local development
 
-Install the generator from the sibling repo in editable mode, then build:
+Install the sibling generator in editable mode, then build:
 
 ```bash
 python -m venv .venv
 # Windows: .venv\Scripts\activate   |   macOS/Linux: source .venv/bin/activate
-pip install -e ../academic-site-generator
+pip install -e "../academic-site-generator[dev]"
 
 acadsite validate --site .
 acadsite build --site . --output public
@@ -105,8 +104,8 @@ deployment on `titansarus.github.io` stays on the project-page domain.
 
 `.github/workflows/deploy.yml` builds and deploys on every push to `main` using
 GitHub Actions (`actions/checkout@v7`, `configure-pages`, `upload-pages-artifact`,
-`deploy-pages`). It installs the generator from a sibling checkout if present,
-otherwise from `requirements.txt` (a Git dependency).
+`deploy-pages`). It installs the generator version pinned in `requirements.txt`,
+validates the site, and generates the static Pages artifact.
 
 Steps to go live on the test domain:
 
