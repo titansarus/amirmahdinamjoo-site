@@ -1,5 +1,19 @@
 [
   {
+    "title": "Situla: Studying the Interplay of Sparse Formats and CPU/GPU Libraries",
+    "authors": "Amirmahdi Namjoo, Sanjali Yadav, Helya Hosseini, Bahar Asgari",
+    "venue": "IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)",
+    "year": 2026,
+    "selected": true,
+    "doi": "10.1109/ISPASS69572.2026.00060",
+    "summary": "A characterization of sparse-dense and sparse-sparse matrix multiplication across Intel Xeon CPUs, NVIDIA H100 GPUs, and Arm Neoverse processors, studying how sparse format, software library, matrix structure, performance, and energy interact.",
+    "tags": ["Sparse Linear Algebra", "Performance Characterization", "CPU/GPU"],
+    "links": [
+      { "label": "Paper", "url": "https://doi.org/10.1109/ISPASS69572.2026.00060" }
+    ],
+    "bibtex": "@inproceedings{namjoo2026situla,\n  author = {Namjoo, Amirmahdi and Yadav, Sanjali and Hosseini, Helya and Asgari, Bahar},\n  title = {Situla: Studying the Interplay of Sparse Formats and CPU/GPU Libraries},\n  booktitle = {2026 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)},\n  year = {2026},\n  pages = {567--577},\n  doi = {10.1109/ISPASS69572.2026.00060}\n}"
+  },
+  {
     "title": "Chasoń: Supporting Cross HBM Channel Data Migration to Enable Efficient Sparse Algebraic Acceleration",
     "authors": "Ubaid Bakhtiar, Amirmahdi Namjoo, Bahar Asgari",
     "venue": "58th IEEE/ACM International Symposium on Microarchitecture (MICRO)",

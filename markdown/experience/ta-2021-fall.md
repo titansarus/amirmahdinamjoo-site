@@ -1,0 +1,4 @@
+- **Head Teaching Assistant** — Fundamentals of Programming in C (Dr. MohammadAmin Fazli)
+- Teaching Assistant — Computer Networks (Dr. Mahdi Jafari Siavoshani)
+- Teaching Assistant — Design of Algorithms (Dr. Hamid Zarrabi-Zadeh)
+- Teaching Assistant — Artificial Intelligence (Dr. Mohammad Hossein Rohban)

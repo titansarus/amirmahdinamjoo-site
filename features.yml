@@ -1,0 +1,33 @@
+# Change any value to false to hide that section everywhere without deleting content.
+publications: true
+education: true
+experience: true
+projects: true
+service: true
+awards: true
+blog: true
+personal_sections: true
+
+# Presentation-only switch. Logo paths and assets stay in place, so this can
+# be changed back to true later without restoring any content.
+organization_logos: false
+
+# Homepage previews only. Example: set personal_sections to false here to hide
+# Personal from the main page while keeping /personal/ available.
+homepage:
+  publications: true
+  experience: true
+  projects: true
+  service: true
+  personal_sections: true
+
+# Standalone pages and their automatically generated navigation links.
+pages:
+  publications: true
+  education: true
+  experience: true
+  projects: true
+  service: true
+  awards: true
+  blog: true
+  personal_sections: true

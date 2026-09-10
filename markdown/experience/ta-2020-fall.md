@@ -1,0 +1,5 @@
+- **Head Teaching Assistant of Assignments** — Fundamentals of Programming in C (Mr. Reza Fakouri)
+- Teaching Assistant — Artificial Intelligence (Dr. Mahdieh Soleymani)
+- Teaching Assistant — Probability and Statistics for Engineering (Dr. Ali Sharifi Zarchi)
+- Teaching Assistant — Numerical Computations (Dr. Fatemeh Baharifard)
+- Teaching Assistant — Computer Organization and Design (Dr. Laleh Arshadi)

@@ -1,2 +1,6 @@
 # The generator is installed from its immutable Git release tag in CI.
-acadsite @ git+https://github.com/titansarus/academic-site-generator.git@v0.1.0
+Jinja2==3.1.6
+Markdown==3.10.2
+MarkupSafe==3.0.2
+PyYAML==6.0.3
+acadsite @ git+https://github.com/titansarus/academic-site-generator.git@v0.2.0

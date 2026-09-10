@@ -1,0 +1,7 @@
+- **Head Teaching Assistant of Project** — Advanced Programming in Java (Dr. MohammadAmin Fazli)
+- Teaching Assistant — Data Structures and Algorithms (Prof. Mohammad Ghodsi and Dr. Mahdi Safarnejad)
+- Teaching Assistant — Computer Architecture (Prof. Hossein Asadi)
+- Teaching Assistant — Artificial Intelligence (Dr. Mohammad Hossein Rohban)
+- Teaching Assistant — Computer Organization and Design (Dr. Laleh Arshadi)
+- Teaching Assistant — Computer Simulation (Dr. Alireza Farhadi)
+- Teaching Assistant — Discrete Structures (Dr. Hamid Zarrabi-Zadeh)

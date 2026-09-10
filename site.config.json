@@ -1,10 +1,11 @@
 {
   "preset": "academic",
+  "features_file": "features.yml",
   "site": {
     "title": "Amirmahdi Namjoo",
-    "brand": "A. Namjoo",
+    "brand": "Amirmahdi Namjoo",
     "author": "Amirmahdi Namjoo",
-    "description": "Amirmahdi Namjoo — Ph.D. student in Computer Science working on computer architecture, systems, and high-performance computing.",
+    "description": "Amirmahdi Namjoo — Ph.D. student in Electrical and Computer Engineering working on computer architecture, systems, and high-performance computing.",
     "lang": "en",
     "favicon": "🎓",
     "base_url": "",
@@ -13,11 +14,10 @@
     "custom_css": false,
     "cv": "assets/files/cv.pdf",
     "social": [
-      { "label": "Email", "icon": "email", "url": "mailto:amirmahdi.namjoo1@gmail.com", "handle": "amirmahdi.namjoo1@gmail.com" },
+      { "label": "Email", "icon": "email", "url": "mailto:anamjoo@usc.edu", "handle": "anamjoo@usc.edu" },
       { "label": "GitHub", "icon": "github", "url": "https://github.com/titansarus", "handle": "github.com/titansarus" },
-      { "label": "Google Scholar", "icon": "google-scholar", "url": "https://scholar.google.com/scholar?q=Amirmahdi+Namjoo", "handle": "Google Scholar" },
-      { "label": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/in/amirmahdi-namjoo-23b4b9192/", "handle": "LinkedIn" },
-      { "label": "Telegram", "icon": "telegram", "url": "https://t.me/amir_astrophysics", "handle": "Telegram" }
+      { "label": "Google Scholar", "icon": "google-scholar", "url": "https://scholar.google.com/citations?hl=en&user=Ly38tukAAAAJ", "handle": "Google Scholar" },
+      { "label": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/in/amirmahdi-namjoo-23b4b9192/", "handle": "LinkedIn" }
     ]
   },
   "tech_icons": {
@@ -73,7 +73,7 @@
     "experience": {
       "label": "Experience", "slug": "experience", "source": "content/experience.json",
       "type": "timeline", "schema": "timeline_item",
-      "sort_by": "start_date", "sort_order": "desc", "group_by": "category", "detail_pages": false
+      "sort_by": "start_date", "sort_order": "desc", "group_by": "institution", "detail_pages": false
     },
     "awards": {
       "label": "Honors & Awards", "slug": "honors", "source": "content/awards.json",
@@ -86,9 +86,9 @@
       "sort_by": "date", "sort_order": "desc", "detail_pages": true
     },
     "service": {
-      "label": "Academic Service", "slug": "service", "source": "content/service.json",
+      "label": "Service & Leadership", "slug": "service", "source": "content/service.json",
       "type": "timeline", "schema": "timeline_item",
-      "sort_by": "start_date", "sort_order": "desc", "group_by": "category", "detail_pages": false
+      "sort_by": "start_date", "sort_order": "desc", "group_by": "institution", "detail_pages": false
     },
     "blog": {
       "label": "Blog", "slug": "blog", "source": "content/blog.json",
@@ -103,15 +103,24 @@
 
   "homepage": {
     "sections": [
-      { "type": "hero", "source": "content/profile.json" },
-      { "type": "collection_preview", "eyebrow": "Background", "title": "Education",
-        "collection": "education", "limit": 5, "link_to_full_page": true },
+      { "type": "hero", "source": "content/profile.json", "collection": "education", "collection_limit": 3 },
       { "type": "collection_preview", "eyebrow": "Research", "title": "Selected Publications",
         "collection": "publications", "filter": { "selected": true }, "limit": 3, "link_to_full_page": true },
       { "type": "collection_preview", "eyebrow": "Selected Work", "title": "Projects",
         "collection": "projects", "filter": { "featured": true }, "limit": 3, "link_to_full_page": true },
       { "type": "collection_preview", "eyebrow": "Experience", "title": "Experience",
-        "collection": "experience", "limit": 3, "mode": "expandable", "link_to_full_page": true },
+        "collection": "experience", "mode": "grouped_accordion", "link_to_full_page": true,
+        "preview_groups": [
+          { "label": "University of Maryland", "description": "Graduate research and teaching", "logo": "assets/logos/umd.png", "filter": { "homepage_group": "Maryland" } },
+          { "label": "Sharif University of Technology", "description": "Research and teaching across ten semesters", "logo": "assets/logos/sharif.svg", "filter": { "homepage_group": "Sharif" } },
+          { "label": "Digikala", "description": "Industry software engineering", "logo": "assets/logos/digikala.svg", "filter": { "homepage_group": "Industry" } }
+        ] },
+      { "type": "collection_preview", "eyebrow": "Community", "title": "Service & Leadership",
+        "collection": "service", "mode": "grouped_accordion", "link_to_full_page": true,
+        "preview_groups": [
+          { "label": "University of Maryland", "description": "Research-community activities", "filter": { "homepage_featured_group": "Maryland" }, "expanded": true },
+          { "label": "Sharif University of Technology", "description": "Student leadership and scientific events", "filter": { "homepage_featured_group": "Sharif" }, "expanded": true }
+        ] },
       { "type": "collection_preview", "eyebrow": "Outside Academia", "title": "Personal",
         "collection": "personal_sections", "limit": 3, "link_to_full_page": true }
     ]
@@ -119,10 +128,9 @@
 
   "pages": [
     { "title": "Publications", "slug": "publications", "layout": "collection_page", "collections": ["publications"] },
-    { "title": "Education", "slug": "education", "layout": "collection_page", "collections": ["education"] },
     { "title": "Experience", "slug": "experience", "layout": "collection_page", "collections": ["experience"] },
-    { "title": "Projects", "slug": "projects", "layout": "projects_showcase", "collections": ["projects"] },
-    { "title": "Service", "slug": "service", "layout": "collection_page", "collections": ["service"] },
+    { "title": "Projects", "slug": "projects", "layout": "collection_page", "collections": ["projects"] },
+    { "title": "Service & Leadership", "slug": "service", "layout": "collection_page", "collections": ["service"] },
     { "title": "Honors", "slug": "honors", "layout": "collection_page", "collections": ["awards"] },
     { "title": "Blog", "slug": "blog", "layout": "collection_page", "collections": ["blog"] },
     { "title": "Personal", "slug": "personal", "layout": "collection_page", "collections": ["personal_sections"] }

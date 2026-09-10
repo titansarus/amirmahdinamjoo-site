@@ -1,83 +1,96 @@
 [
   {
+    "title": "Student Volunteer",
+    "org": "SPICE Workshop @ MICRO 2025",
+    "institution": "University of Maryland",
+    "homepage_featured_group": "Maryland",
+    "start_date": "2025-10",
+    "end_date": "2025-10",
+    "logo": "assets/logos/umd.png",
+    "location": "Seoul, South Korea",
+    "summary": "Student volunteer for the SPICE workshop on sparsity, held with MICRO 2025.",
+    "links": [{ "label": "Workshop", "url": "https://spice.cs.umd.edu/" }]
+  },
+  {
+    "title": "Peer Reviewer",
+    "org": "IEEE MICRO",
+    "institution": "University of Maryland",
+    "homepage_featured_group": "Maryland",
+    "start_date": "2026-02",
+    "end_date": "2026-02",
+    "logo": "assets/logos/umd.png",
+    "summary": "Peer reviewer for IEEE MICRO."
+  },
+  {
     "title": "President",
-    "org": "Students' Scientific Chapter (SSC), Sharif University of Technology",
-    "category": "Leadership",
+    "org": "Students' Scientific Chapter (SSC)",
+    "institution": "Sharif University of Technology",
+    "homepage_featured_group": "Sharif",
     "start_date": "2022-09",
     "end_date": "2023-09",
     "logo": "assets/logos/ssc.svg",
-    "summary": "Elected president of the Computer Engineering Students' Scientific Chapter — a student association that runs scientific talks and events throughout the year — after winning the most votes in the general election and the central council."
+    "location": "Tehran, Iran",
+    "summary": "Elected president of the Computer Engineering Students' Scientific Chapter, leading its central council and year-round scientific programming."
+  },
+  {
+    "title": "Vice Chair & Scientific Staff",
+    "org": "Winter Seminar Series (WSS)",
+    "institution": "Sharif University of Technology",
+    "homepage_featured_group": "Sharif",
+    "start_date": "2021-12",
+    "end_date": "2023-04",
+    "logo": "assets/logos/wss.svg",
+    "location": "Tehran, Iran",
+    "summary": "Selected and invited speakers as scientific staff for WSS 2022 and later served as vice chair for the following series."
   },
   {
     "title": "Chief of Staff",
     "org": "ICPC Asia Tehran Regional Contest 2022",
-    "category": "Event Organization",
+    "institution": "Sharif University of Technology",
     "start_date": "2023-04",
     "end_date": "2023-05",
     "logo": "assets/logos/icpc.svg",
+    "location": "Tehran, Iran",
     "summary": "Chief of Staff for the ICPC Asia Tehran regional programming contest."
-  },
-  {
-    "title": "Vice Chair",
-    "org": "Winter Seminar Series (WSS) 2022",
-    "category": "Event Organization",
-    "start_date": "2022-02",
-    "end_date": "2022-04",
-    "logo": "assets/logos/wss.svg",
-    "summary": "Vice chair of the Winter Seminar Series, an international event where invited professors and researchers present their work."
   },
   {
     "title": "Executive Staff",
     "org": "Hardwar 2023",
-    "category": "Event Organization",
+    "institution": "Sharif University of Technology",
     "start_date": "2023-04",
     "end_date": "2023-05",
     "logo": "assets/logos/hardwar.svg",
-    "summary": "Executive team member for Hardwar 2023, a two-day hardware-focused student competition."
+    "location": "Tehran, Iran",
+    "summary": "Executive team member for a two-day hardware-focused student competition."
   },
   {
     "title": "Scientific Staff",
     "org": "Hardwar 2022",
-    "category": "Event Organization",
+    "institution": "Sharif University of Technology",
     "start_date": "2022-05",
     "end_date": "2022-06",
     "logo": "assets/logos/hardwar.svg",
-    "summary": "Scientific staff for the FPGA track of Hardwar 2022."
-  },
-  {
-    "title": "Scientific Staff",
-    "org": "Winter Seminar Series (WSS) 2022",
-    "category": "Event Organization",
-    "start_date": "2021-12",
-    "end_date": "2022-04",
-    "logo": "assets/logos/wss.svg",
-    "summary": "Responsible for the selection and invitation of speakers for WSS 2022."
+    "location": "Tehran, Iran",
+    "summary": "Scientific staff for the FPGA track."
   },
   {
     "title": "Scientific Staff",
     "org": "DataDays 2021",
-    "category": "Event Organization",
+    "institution": "Sharif University of Technology",
     "start_date": "2020-12",
     "end_date": "2021-09",
     "logo": "assets/logos/datadays.svg",
-    "summary": "Prepared educational content, including Jupyter notebooks, for DataDays — a data-science tournament held by the SSC."
+    "location": "Tehran, Iran",
+    "summary": "Prepared educational content and Jupyter notebooks for a student data-science tournament."
   },
   {
     "title": "Technical Staff",
-    "org": "ACM-ICPC Asia Tehran Regional Contest 2019",
-    "category": "Event Organization",
+    "org": "2019 ICPC Asia-West Continent Final & Tehran Regional",
+    "institution": "Sharif University of Technology",
     "start_date": "2019-10",
-    "end_date": "2019-12",
-    "logo": "assets/logos/icpc.svg",
-    "summary": "Technical staff for the ICPC Asia Tehran regional contest."
-  },
-  {
-    "title": "Technical Staff",
-    "org": "2019 ICPC Asia–West Continent Final Contest (Tehran Site)",
-    "category": "Event Organization",
-    "start_date": "2020-01",
     "end_date": "2020-01",
     "logo": "assets/logos/icpc.svg",
-    "summary": "Technical staff for the ICPC Asia–West Continent Final Contest, Tehran site."
+    "location": "Tehran, Iran",
+    "summary": "Technical and executive staff for the Asia-West continent final and Tehran regional contests."
   }
 ]

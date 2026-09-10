@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Content editor</title>
+  <style nonce="__CSP_NONCE__">
+    :root { color-scheme: light; --bg:#f4f6fa; --panel:#fff; --ink:#172033; --muted:#68748a; --line:#dce3ee; --accent:#2563eb; --accent-soft:#eaf1ff; --danger:#b42318; --shadow:0 14px 38px rgba(29,43,72,.09); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; background:var(--bg); color:var(--ink); }
+    button,input,textarea { font:inherit; }
+    button { cursor:pointer; }
+    .app { min-height:100vh; display:grid; grid-template-columns:300px minmax(0,1fr); }
+    .sidebar { position:sticky; top:0; height:100vh; overflow:auto; padding:26px 20px; background:#182238; color:#eef3ff; }
+    .brand { margin:0 0 4px; font-size:19px; }
+    .sub { color:#aebbd2; font-size:13px; margin:0 0 24px; }
+    .tabs { display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-bottom:18px; }
+    .tab { border:1px solid #40506d; border-radius:8px; color:#cdd7ea; background:transparent; padding:9px; }
+    .tab.active { color:#fff; background:#2a65d7; border-color:#4b7ce0; }
+    .new { width:100%; border:0; border-radius:8px; background:#fff; color:#182238; font-weight:700; padding:10px; margin-bottom:15px; }
+    .entries { display:flex; flex-direction:column; gap:6px; }
+    .entry { width:100%; text-align:left; padding:10px; border:1px solid transparent; border-radius:8px; background:transparent; color:#eef3ff; }
+    .entry:hover,.entry.active { background:#24314a; border-color:#42516b; }
+    .entry strong,.entry small { display:block; }
+    .entry small { color:#aebbd2; margin-top:3px; }
+    .empty { color:#aebbd2; font-size:13px; padding:12px 4px; }
+    .workspace { padding:34px clamp(24px,5vw,72px) 60px; }
+    .top { max-width:940px; display:flex; align-items:flex-start; justify-content:space-between; gap:20px; margin:0 auto 20px; }
+    .top h1 { margin:0 0 5px; font-size:27px; }
+    .top p { margin:0; color:var(--muted); font-size:14px; }
+    .actions { display:flex; gap:9px; }
+    .btn { border:1px solid var(--line); border-radius:8px; padding:9px 15px; background:var(--panel); color:var(--ink); font-weight:650; }
+    .btn.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+    .btn.danger { color:var(--danger); }
+    .btn:disabled { opacity:.45; cursor:not-allowed; }
+    .sheet { max-width:940px; margin:auto; background:var(--panel); border:1px solid var(--line); border-radius:13px; box-shadow:var(--shadow); padding:26px; }
+    .grid { display:grid; grid-template-columns:2fr 1fr; gap:18px; }
+    .field { display:flex; flex-direction:column; gap:7px; margin-bottom:18px; }
+    .field label,.legend { font-size:12px; font-weight:750; letter-spacing:.055em; text-transform:uppercase; color:var(--muted); }
+    input,textarea { width:100%; border:1px solid var(--line); border-radius:8px; padding:10px 12px; background:#fff; color:var(--ink); outline:none; transition:border-color .15s,box-shadow .15s; }
+    input:focus,textarea:focus,.editor:focus { border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft); }
+    textarea { min-height:78px; resize:vertical; line-height:1.5; }
+    .checks { display:flex; gap:22px; margin:2px 0 20px; }
+    .check { display:flex; gap:8px; align-items:center; color:var(--muted); font-size:14px; }
+    .check input { width:auto; }
+    .toolbar { display:flex; flex-wrap:wrap; gap:5px; padding:7px; border:1px solid var(--line); border-bottom:0; border-radius:9px 9px 0 0; background:#f8fafd; }
+    .tool { min-width:32px; min-height:31px; border:1px solid transparent; border-radius:6px; background:transparent; color:var(--ink); }
+    .tool:hover { border-color:var(--line); background:#fff; }
+    .editor { min-height:360px; border:1px solid var(--line); border-radius:0 0 9px 9px; padding:22px; outline:none; line-height:1.7; }
+    .editor:empty::before { content:"Write your entry here…"; color:#9aa4b5; }
+    .editor h2 { font-size:23px; margin:24px 0 8px; }
+    .editor h3 { font-size:19px; margin:20px 0 7px; }
+    .editor blockquote { margin:16px 0; padding-left:15px; border-left:3px solid var(--accent); color:var(--muted); }
+    .status { position:fixed; right:24px; bottom:22px; max-width:380px; background:#182238; color:#fff; padding:11px 15px; border-radius:8px; box-shadow:var(--shadow); opacity:0; transform:translateY(8px); pointer-events:none; transition:.2s ease; }
+    .status.show { opacity:1; transform:none; }
+    .status.error { background:var(--danger); }
+    [hidden] { display:none !important; }
+    @media (max-width:780px) { .app{grid-template-columns:1fr}.sidebar{position:static;height:auto}.entries{max-height:220px;overflow:auto}.workspace{padding:24px 16px 50px}.grid{grid-template-columns:1fr}.top{flex-direction:column}.sheet{padding:18px} }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1 class="brand">Content editor</h1>
+      <p class="sub">Local authoring for Blog and Personal</p>
+      <div class="tabs" role="tablist">
+        <button class="tab active" type="button" data-collection="blog">Blog</button>
+        <button class="tab" type="button" data-collection="personal">Personal</button>
+      </div>
+      <button class="new" type="button" id="new-entry">+ New entry</button>
+      <div class="entries" id="entries"></div>
+    </aside>
+
+    <main class="workspace">
+      <header class="top">
+        <div><h1 id="form-title">New blog entry</h1><p>Save updates the collection JSON and body file together.</p></div>
+        <div class="actions">
+          <button class="btn danger" type="button" id="delete" disabled>Delete</button>
+          <button class="btn primary" type="button" id="save">Save entry</button>
+        </div>
+      </header>
+
+      <form class="sheet" id="entry-form">
+        <div class="grid">
+          <div class="field"><label for="title">Title</label><input id="title" required autocomplete="off"></div>
+          <div class="field"><label for="slug">Slug</label><input id="slug" pattern="[a-z0-9]+(?:-[a-z0-9]+)*" autocomplete="off"></div>
+        </div>
+        <div class="grid">
+          <div class="field" id="date-field"><label for="date">Date</label><input id="date" type="date"></div>
+          <div class="field" id="category-field" hidden><label for="category">Category</label><input id="category" placeholder="notes, interests, …"></div>
+          <div class="field"><label for="tags">Tags</label><input id="tags" placeholder="architecture, research"></div>
+        </div>
+        <div class="field"><label for="summary">Summary</label><textarea id="summary" placeholder="A short description used on list and home pages."></textarea></div>
+        <div class="checks">
+          <label class="check"><input id="featured" type="checkbox"> Featured</label>
+          <label class="check"><input id="draft" type="checkbox"> Draft</label>
+        </div>
+        <div class="field">
+          <span class="legend">Body</span>
+          <div class="toolbar" aria-label="Formatting toolbar">
+            <button class="tool" type="button" data-command="bold" title="Bold"><strong>B</strong></button>
+            <button class="tool" type="button" data-command="italic" title="Italic"><em>I</em></button>
+            <button class="tool" type="button" data-block="p" title="Paragraph">P</button>
+            <button class="tool" type="button" data-block="h2" title="Heading 2">H2</button>
+            <button class="tool" type="button" data-block="h3" title="Heading 3">H3</button>
+            <button class="tool" type="button" data-command="insertUnorderedList" title="Bulleted list">• List</button>
+            <button class="tool" type="button" data-command="insertOrderedList" title="Numbered list">1. List</button>
+            <button class="tool" type="button" data-block="blockquote" title="Quote">❝</button>
+            <button class="tool" type="button" data-link title="Add link">Link</button>
+            <button class="tool" type="button" data-command="removeFormat" title="Clear formatting">Clear</button>
+          </div>
+          <div class="editor" id="body" contenteditable="true" role="textbox" aria-multiline="true"></div>
+        </div>
+      </form>
+    </main>
+  </div>
+  <div class="status" id="status" role="status"></div>
+
+  <script nonce="__CSP_NONCE__">
+    (function () {
+      'use strict';
+      var collection = 'blog';
+      var originalSlug = '';
+      var entries = document.getElementById('entries');
+      var formTitle = document.getElementById('form-title');
+      var title = document.getElementById('title');
+      var slug = document.getElementById('slug');
+      var date = document.getElementById('date');
+      var category = document.getElementById('category');
+      var tags = document.getElementById('tags');
+      var summary = document.getElementById('summary');
+      var featured = document.getElementById('featured');
+      var draft = document.getElementById('draft');
+      var body = document.getElementById('body');
+      var deleteButton = document.getElementById('delete');
+      var status = document.getElementById('status');
+      var titleTouched = false;
+
+      function notify(message, error) {
+        status.textContent = message;
+        status.classList.toggle('error', Boolean(error));
+        status.classList.add('show');
+        clearTimeout(notify.timer);
+        notify.timer = setTimeout(function () { status.classList.remove('show'); }, 2800);
+      }
+
+      function api(path, options) {
+        return fetch(path, options).then(function (response) {
+          return response.json().then(function (data) {
+            if (!response.ok) throw new Error(data.error || 'Request failed.');
+            return data;
+          });
+        });
+      }
+
+      function makeSlug(value) {
+        return value.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'entry';
+      }
+
+      function blankForm() {
+        originalSlug = '';
+        titleTouched = false;
+        document.getElementById('entry-form').reset();
+        body.innerHTML = '';
+        slug.value = '';
+        formTitle.textContent = 'New ' + collection + ' entry';
+        deleteButton.disabled = true;
+        document.querySelectorAll('.entry').forEach(function (item) { item.classList.remove('active'); });
+        title.focus();
+      }
+
+      function renderEntries(items) {
+        entries.innerHTML = '';
+        if (!items.length) {
+          entries.innerHTML = '<p class="empty">No entries yet. Create the first one.</p>';
+          return;
+        }
+        items.forEach(function (item) {
+          var button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'entry' + (item.slug === originalSlug ? ' active' : '');
+          button.dataset.slug = item.slug;
+          var strong = document.createElement('strong');
+          strong.textContent = item.title;
+          var small = document.createElement('small');
+          small.textContent = [item.date, item.draft ? 'draft' : ''].filter(Boolean).join(' · ') || item.slug;
+          button.append(strong, small);
+          entries.appendChild(button);
+        });
+      }
+
+      function refreshList() {
+        return api('/api/entries?collection=' + encodeURIComponent(collection)).then(renderEntries).catch(function (error) { notify(error.message, true); });
+      }
+
+      function loadEntry(entrySlug) {
+        api('/api/entry?collection=' + encodeURIComponent(collection) + '&slug=' + encodeURIComponent(entrySlug)).then(function (item) {
+          originalSlug = item.slug;
+          titleTouched = true;
+          title.value = item.title || '';
+          slug.value = item.slug || '';
+          date.value = item.date || '';
+          category.value = item.category || '';
+          tags.value = (item.tags || []).join(', ');
+          summary.value = item.summary || '';
+          featured.checked = Boolean(item.featured);
+          draft.checked = Boolean(item.draft);
+          body.innerHTML = item.body_html || '';
+          formTitle.textContent = 'Edit ' + item.title;
+          deleteButton.disabled = false;
+          refreshList();
+        }).catch(function (error) { notify(error.message, true); });
+      }
+
+      function setCollection(next) {
+        collection = next;
+        document.querySelectorAll('.tab').forEach(function (tab) { tab.classList.toggle('active', tab.dataset.collection === next); });
+        document.getElementById('date-field').hidden = next !== 'blog';
+        document.getElementById('category-field').hidden = next !== 'personal';
+        blankForm();
+        refreshList();
+      }
+
+      function saveEntry() {
+        var payload = {
+          collection: collection,
+          original_slug: originalSlug,
+          title: title.value,
+          slug: slug.value,
+          date: date.value,
+          category: category.value,
+          tags: tags.value.split(',').map(function (tag) { return tag.trim(); }).filter(Boolean),
+          summary: summary.value,
+          featured: featured.checked,
+          draft: draft.checked,
+          body_html: body.innerHTML
+        };
+        api('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }).then(function (saved) {
+          originalSlug = saved.slug;
+          slug.value = saved.slug;
+          formTitle.textContent = 'Edit ' + saved.title;
+          deleteButton.disabled = false;
+          notify('Saved ' + saved.title + '.');
+          refreshList();
+        }).catch(function (error) { notify(error.message, true); });
+      }
+
+      document.addEventListener('click', function (event) {
+        var tab = event.target.closest('.tab');
+        if (tab) setCollection(tab.dataset.collection);
+        var item = event.target.closest('.entry');
+        if (item) loadEntry(item.dataset.slug);
+        var command = event.target.closest('[data-command]');
+        if (command) { body.focus(); document.execCommand(command.dataset.command, false); }
+        var block = event.target.closest('[data-block]');
+        if (block) { body.focus(); document.execCommand('formatBlock', false, block.dataset.block); }
+        var link = event.target.closest('[data-link]');
+        if (link) {
+          var url = window.prompt('Link URL (https://…)');
+          if (url) { body.focus(); document.execCommand('createLink', false, url); }
+        }
+      });
+
+      title.addEventListener('input', function () {
+        if (!originalSlug && !titleTouched) slug.value = makeSlug(title.value);
+      });
+      slug.addEventListener('input', function () { titleTouched = true; });
+      document.getElementById('new-entry').addEventListener('click', blankForm);
+      document.getElementById('save').addEventListener('click', saveEntry);
+      document.getElementById('entry-form').addEventListener('submit', function (event) { event.preventDefault(); saveEntry(); });
+      deleteButton.addEventListener('click', function () {
+        if (!originalSlug || !window.confirm('Remove this entry from the collection? Its body file will be kept for recovery.')) return;
+        api('/api/delete', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({collection:collection,slug:originalSlug}) }).then(function () {
+          notify('Entry removed. Its body file was retained.');
+          blankForm();
+          refreshList();
+        }).catch(function (error) { notify(error.message, true); });
+      });
+
+      setCollection('blog');
+    })();
+  </script>
+</body>
+</html>

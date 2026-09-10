@@ -50,20 +50,19 @@ Preview folders: `_site-preview/amirmahdinamjoo-site/` (Theme1) and
 `_site-preview/amirmahdinamjoo-site-theme2/` (Theme2). Serve either with
 `python -m http.server -d <folder> 8000`.
 
-## Projects page — two designs to compare
+## Projects page
 
-The **Projects** page selects the academic preset's reusable
-`projects_showcase` layout and currently renders the same projects in **two
-designs** so they can be compared:
+Projects use the academic preset's reusable card-grid component. The personal
+configuration selects the generic `collection_page` layout and the projects
+collection uses `type: cards`; no site-specific project template is required.
 
-- **Design A — List view:** a compact horizontal list, like the experience and
-  service sections.
-- **Design B — Card view:** reworked cards with an accent bar instead of an
-  empty image placeholder.
+## Partial page navigation
 
-Once a preferred design is chosen, set the page's `layout` back to
-`collection_page` (Design B is the default `cards` rendering), or update the
-reusable preset layout in the generator. Presentation code remains generator-owned.
+Navbar links progressively fetch the destination's generated HTML and replace
+only `<main>`. The header, footer, theme state, and JavaScript stay mounted while
+the URL, title, active navigation item, and browser history remain correct.
+Direct links, refreshes, search engines, and browsers without JavaScript still
+receive complete static HTML pages.
 
 ## Local development
 
@@ -85,6 +84,50 @@ not `file://`):
 python -m http.server -d public 8000
 # visit http://localhost:8000/
 ```
+
+## Enable or disable sections
+
+Edit `features.yml` and change one value. To hide the blog everywhere:
+
+```yaml
+blog: false
+```
+
+That hides the blog from navigation and the homepage and stops generating its
+pages and feed entries. The JSON and Markdown content stays untouched. The same
+switches apply to both themes.
+
+To hide only the Personal preview from the main page while keeping the full
+Personal page, change the nested homepage flag:
+
+```yaml
+homepage:
+  personal_sections: false
+```
+
+The `pages` group independently controls standalone pages and their navigation
+links. Top-level flags remain the global master switches.
+
+University and organization logo paths remain in the content and assets but
+are hidden in the first public design. Restore them later with one line:
+
+```yaml
+organization_logos: true
+```
+
+## Blog and Personal editor
+
+The local rich-text editor is a development tool and is never copied into the
+generated website. Run it from this repository:
+
+```powershell
+python tools/content_editor/app.py
+```
+
+It opens <http://127.0.0.1:8790/> and can create, load, edit, or remove Blog and
+Personal entries. Saving updates the appropriate `content/*.json` inventory and
+`markdown/**/<slug>.md` body file together. See
+`tools/content_editor/README.md` for recovery and command-line details.
 
 ## Environments
 

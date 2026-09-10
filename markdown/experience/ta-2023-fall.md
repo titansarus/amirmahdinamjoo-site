@@ -1,0 +1,4 @@
+- **Head Teaching Assistant** — System Analysis and Design (Dr. Alireza Aghamohammadi)
+- Teaching Assistant — Computer Networks (Dr. Mahdi Jafari Siavoshani)
+- Teaching Assistant — Fundamentals of Programming (Dr. Mohammad Amin Fazli)
+- Teaching Assistant — Operating Systems (Prof. Hossein Asadi)

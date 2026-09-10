@@ -1,16 +1,1 @@
-[
-  {
-    "title": "Rebuilding My Website with a Custom Static Site Generator",
-    "date": "2026-07-04",
-    "tags": ["web", "python", "tools"],
-    "summary": "Why I replaced my old personal site with a small, reusable Python static site generator built around generic collections and an academic preset.",
-    "body": "markdown/posts/rebuilding-my-website.md"
-  },
-  {
-    "title": "Notes on Sparse Linear Algebra Acceleration",
-    "date": "2026-05-20",
-    "tags": ["architecture", "research"],
-    "summary": "A short, informal introduction to why sparse matrix computations are hard to accelerate and where memory bandwidth fits in.",
-    "body": "markdown/posts/sparse-acceleration-notes.md"
-  }
-]
+[]

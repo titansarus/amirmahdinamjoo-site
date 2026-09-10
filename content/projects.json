@@ -1,12 +1,46 @@
 [
   {
-    "title": "Academic Site Generator",
-    "date": "2026-07",
+    "title": "Fairness in LLM Toxicity Detection",
+    "date": "2025-10",
+    "display_date": "Oct 2025 - Dec 2025",
+    "summary": "Evaluated attributional bias in LLM toxicity detection using counterfactual author identities, measuring attribution shift, false-positive disparity, alignment bias, calibration, and differences between GPT-OSS-120B and LLaMA-3.1-8B.",
+    "technologies": ["Python", "LLM Evaluation"]
+  },
+  {
+    "title": "Advanced Computer Graphics Projects",
+    "date": "2025-08",
+    "display_date": "Aug 2025 - Dec 2025",
+    "summary": "Implemented a PyTorch path tracer with camera, lighting, reflection, refraction, path-tracing, and inverse-rendering components; also evaluated Nerfacto robustness under noise, color jitter, and blur using PSNR, SSIM, and LPIPS.",
+    "technologies": ["Python", "PyTorch", "Nerfstudio", "NeRF"]
+  },
+  {
+    "title": "Parallel Programming Framework Comparison",
+    "date": "2025-05",
+    "summary": "Compared OpenMP, Intel TBB, C++ Parallel STL, OpenMPI, and Intel MPI on NAS Parallel Benchmarks and SPEC HPC 2021, profiling scalability, NUMA behavior, synchronization, communication, and runtime bottlenecks.",
+    "technologies": ["C++", "OpenMP", "Intel TBB", "PSTL", "MPI"]
+  },
+  {
+    "title": "Adaptive SpMM Scheduling Simulator",
+    "date": "2024-10",
+    "display_date": "Oct 2024 - Dec 2024",
     "featured": true,
-    "summary": "A reusable Python static site generator with generic collections, pages, and components plus an academic preset — the engine that builds this website.",
-    "technologies": ["Python", "Jinja2", "Markdown", "YAML"],
-    "body": "markdown/projects/academic-site-generator.md",
-    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus" }]
+    "summary": "A distributed sparse matrix multiplication simulator for heterogeneous accelerator nodes, modeling SIGMA, GAMMA, and OuterSPACE dataflows with matrix analysis, Greedy/LPT scheduling, window-based task scheduling, and utilization metrics.",
+    "technologies": ["Python", "SciPy", "SimPy"],
+    "links": [{ "label": "GitHub", "url": "https://github.com/titansarus/umd-dsa" }]
+  },
+  {
+    "title": "CalcuLatency",
+    "date": "2024-10",
+    "display_date": "Oct 2024 - Dec 2024",
+    "summary": "A replication of CalcuLatency for detecting proxy and VPN usage through latency measurements and user geolocation; implemented the backend, ping/TCP measurement tools, and analytical pipeline.",
+    "technologies": ["FastAPI", "Python", "Leaflet.js", "Scapy"]
+  },
+  {
+    "title": "Peykar Cyber-Range",
+    "date": "2022-05",
+    "display_date": "May 2022 - May 2023",
+    "summary": "A cyber-range platform developed at S4Lab to prepare security specialists through realistic challenges; contributed to core infrastructure, backend APIs, and challenge design.",
+    "technologies": ["Django", "React", "Docker", "Go", "Grafana", "Splunk"]
   },
   {
     "title": "Arno — Service Requesting System",
@@ -58,10 +92,11 @@
     "links": [{ "label": "GitHub", "url": "https://github.com/titansarus/Telenurse" }]
   },
   {
-    "title": "Peer-to-Peer Network",
+    "title": "Computer Networks Course Projects (P2P Network & P4)",
     "date": "2021-08",
-    "summary": "A binary-tree-structured peer-to-peer network in Python with custom packet types and a simple P2P chat application built on top.",
-    "technologies": ["Python"],
+    "display_date": "Jun 2021 - Aug 2021",
+    "summary": "Built a decentralized binary-tree peer-to-peer chat network from the IP through application layers, and implemented UDP, TCP, and access-control-list behavior on a programmable switch using P4.",
+    "technologies": ["Python", "P4"],
     "links": [{ "label": "GitHub", "url": "https://github.com/mohammadrezaabdi/CE_CN_Project_992" }]
   },
   {
