@@ -5,6 +5,12 @@ JSON and Markdown; the site is built by the reusable
 [`acadsite`](https://github.com/titansarus/academic-site-generator) static site
 generator.
 
+## Note
+
+Most of the site code was written with the help of AI coding tools, including OpenAI Codex and Claude Code.
+
+I wanted to personally evaluate their workflow and how well they could follow the instructions I gave them for building a modular academic site generator (think of it like Jekyll), and then creating a website for myself using this academic site generator. The overall design direction, how the content should be organized on each page, what features the website should include, and similar decisions were instructed by me, while most of the actual code was written by AI.
+
 ## Structure
 
 ```
