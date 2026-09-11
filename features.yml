@@ -5,8 +5,8 @@ experience: true
 projects: true
 service: true
 awards: true
-blog: true
-personal_sections: true
+blog: false
+personal_sections: false
 
 # Presentation-only switch. Logo paths and assets stay in place, so this can
 # be changed back to true later without restoring any content.
@@ -19,7 +19,7 @@ homepage:
   experience: true
   projects: true
   service: true
-  personal_sections: true
+  personal_sections: false
 
 # Standalone pages and their automatically generated navigation links.
 pages:
@@ -29,5 +29,5 @@ pages:
   projects: true
   service: true
   awards: true
-  blog: true
-  personal_sections: true
+  blog: false
+  personal_sections: false
