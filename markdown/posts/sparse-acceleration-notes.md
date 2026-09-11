@@ -1,4 +1,4 @@
-Sparse linear algebra shows up everywhere — graph analytics, scientific
+Sparse linear algebra shows up everywhere, including graph analytics, scientific
 computing, and increasingly machine learning. Yet it is stubbornly hard to
 accelerate. Here is the short version of why.
 
@@ -18,7 +18,7 @@ $$\text{FLOPs} \approx 2 \cdot \text{nnz},$$
 
 while the data movement can be far larger once you account for index arrays and
 poor reuse. High-bandwidth memory helps, but only if you can actually keep its
-channels busy — which is where careful data placement and migration matter.
+channels busy, which is where careful data placement and migration matter.
 
 These notes are informal; the details live in the papers on my
 [publications](/publications/) page.

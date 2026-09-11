@@ -43,7 +43,7 @@
     "technologies": ["Django", "React", "Docker", "Go", "Grafana", "Splunk"]
   },
   {
-    "title": "Arno — Service Requesting System",
+    "title": "Arno: Service Requesting System",
     "date": "2022-09",
     "featured": true,
     "summary": "An online service-requesting platform with customer, provider, and admin panels, designed with the Unified Process and object-oriented design principles.",
@@ -85,7 +85,7 @@
     "links": [{ "label": "GitHub", "url": "https://github.com/titansarus/PintOS" }]
   },
   {
-    "title": "Telenurse — Healthcare Logistics",
+    "title": "Telenurse: Healthcare Logistics",
     "date": "2022-02",
     "summary": "A logistics platform connecting patients who need at-home nursing with providers, built as a System Analysis & Design project using Scrum.",
     "technologies": ["Django", "PostgreSQL", "Docker"],

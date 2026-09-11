@@ -1,2 +1,2 @@
-- Teaching Assistant — Probability and Statistics for Engineering (Dr. Naeemeh Omidvar)
-- Teaching Assistant — Advanced Programming in Java (Dr. Mahdi Mostafazadeh, Mr. Iman Isazadeh, Mr. Amir Malekzadeh, and Mr. Ali Chekah)
+- Teaching Assistant: Probability and Statistics for Engineering (Dr. Naeemeh Omidvar)
+- Teaching Assistant: Advanced Programming in Java (Dr. Mahdi Mostafazadeh, Mr. Iman Isazadeh, Mr. Amir Malekzadeh, and Mr. Ali Chekah)

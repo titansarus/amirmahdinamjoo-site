@@ -5,7 +5,7 @@
     "title": "Amirmahdi Namjoo",
     "brand": "Amirmahdi Namjoo",
     "author": "Amirmahdi Namjoo",
-    "description": "Amirmahdi Namjoo — Ph.D. student in Electrical and Computer Engineering, working on computer architecture and high-performance computing.",
+    "description": "Amirmahdi Namjoo, Ph.D. student in Electrical and Computer Engineering, working on computer architecture and high-performance computing.",
     "lang": "en",
     "favicon": "✒️",
     "base_url": "",
@@ -22,7 +22,7 @@
   },
   "theme": { "default": "system" },
   "math": true,
-  "feed": { "enabled": true, "collection": "blog", "title": "Amirmahdi Namjoo — writing" },
+  "feed": { "enabled": true, "collection": "blog", "title": "Amirmahdi Namjoo: writing" },
 
   "tech_icons": {
     "python": "assets/icons/tech/python.svg",

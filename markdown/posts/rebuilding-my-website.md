@@ -1,6 +1,6 @@
 I recently rebuilt this website from scratch. The old version was a pile of
 hand-written HTML that was painful to update, so I decided to build a small
-static site generator instead — and to keep the generator reusable rather than
+static site generator instead while keeping the generator reusable rather than
 hardcoding it around my own pages.
 
 ## The core idea
@@ -8,14 +8,14 @@ hardcoding it around my own pages.
 The engine knows nothing about "publications" or "experience". It only knows
 about a few generic concepts:
 
-- **collections** — lists of structured items loaded from JSON, YAML, or Markdown
-- **pages** — output routes driven by a named layout template
-- **components** — reusable template partials
-- **homepage sections** — configurable blocks like a hero, a preview, or news
+- **collections**: lists of structured items loaded from JSON, YAML, or Markdown
+- **pages**: output routes driven by a named layout template
+- **components**: reusable template partials
+- **homepage sections**: configurable blocks like a hero, a preview, or news
 
 Everything academic lives in a *preset* and in configuration. That means the
-same generator could build a very different site — a lab page, a course site, a
-portfolio — without touching the engine.
+same generator could build a very different site, such as a lab page, a course site, or a
+portfolio, without touching the engine.
 
 ## What I get for free
 
