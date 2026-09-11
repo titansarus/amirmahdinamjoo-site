@@ -36,10 +36,10 @@ jobs:
           python -m pip install --disable-pip-version-check -r requirements.txt
 
       - name: Validate content
-        run: acadsite validate --site . --env github-pages
+        run: acadsite validate --site . --env production
 
       - name: Build static site
-        run: acadsite build --site . --output public --env github-pages
+        run: acadsite build --site . --output public --env production
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

@@ -115,10 +115,10 @@ jobs:
           python -m pip install --disable-pip-version-check -r requirements.txt
 
       - name: Validate content
-        run: acadsite validate --site . --env github-pages
+        run: acadsite validate --site . --env production
 
       - name: Build static site
-        run: acadsite build --site . --output public --env github-pages
+        run: acadsite build --site . --output public --env production
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -144,7 +144,7 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-On each push to `main`, the workflow installs the tagged generator, validates the site, builds static files into `public`, uploads that directory as a Pages artifact, and deploys it. `workflow_dispatch` also adds a **Run workflow** button for manual deployments.
+On each push to `main`, the workflow installs the tagged generator, validates the `production` environment, builds static files into `public`, uploads that directory as a Pages artifact, and deploys it. `workflow_dispatch` also adds a **Run workflow** button for manual deployments. The `production` environment is required for the current custom domain because it builds root-relative asset URLs and emits `CNAME`.
 
 The generated `public` directory is a build artifact and should not be committed. No `gh-pages` branch or server-side Python process is needed.
 
@@ -156,25 +156,25 @@ After the generator repository, `v0.2.0` tag, and site repository have been push
 2. Confirm that both the `build` and `deploy` jobs succeed.
 3. Open the deployment URL shown by the `deploy` job.
 
-With the current repository name and configuration, the site URL is:
+With the current custom-domain configuration, the site URL is:
 
 ```text
-https://titansarus.github.io/amirmahdinamjoo-site/
+https://amirmahdinamjoo.com/
 ```
 
 The corresponding environment in `site.config.json` is already configured as:
 
 ```json
-"github-pages": {
+"production": {
   "site": {
-    "base_url": "https://titansarus.github.io",
-    "base_path": "/amirmahdinamjoo-site/",
-    "custom_domain": null
+    "base_url": "https://amirmahdinamjoo.com",
+    "base_path": "/",
+    "custom_domain": "amirmahdinamjoo.com"
   }
 }
 ```
 
-If the GitHub username or repository name changes, update both `base_url` and `base_path`. For a GitHub user site whose repository is named `titansarus.github.io`, use `/` as `base_path`.
+If the custom domain is removed, change both workflow commands back to `--env github-pages`. The existing `github-pages` environment builds for `https://titansarus.github.io/amirmahdinamjoo-site/` with `/amirmahdinamjoo-site/` as its base path.
 
 ## 7. Test before pushing
 
@@ -197,14 +197,14 @@ python -m http.server 8000 --directory public
 
 Open `http://localhost:8000/`. Stop the server with `Ctrl+C`.
 
-Also validate the GitHub Pages environment before pushing:
+Also validate the deployed custom-domain environment before pushing:
 
 ```powershell
-acadsite validate --site . --env github-pages
-acadsite build --site . --output public --env github-pages
+acadsite validate --site . --env production
+acadsite build --site . --output public --env production
 ```
 
-That second build uses the `/amirmahdinamjoo-site/` URL prefix intended for GitHub Pages. The Actions workflow performs the same validation and build on Linux.
+That second build uses root-relative URLs and writes `public/CNAME` for `amirmahdinamjoo.com`. The Actions workflow performs the same validation and build on Linux.
 
 ## 8. Release generator updates
 
@@ -227,13 +227,13 @@ git -C .\academic-site-generator push origin v0.2.1
 
 Push the site only after the new generator tag is available on GitHub. Otherwise, the workflow cannot install it.
 
-## 9. Optional custom domain
+## 9. Custom domain
 
-The first deployment should use the project URL above. To switch later to `https://amirmahdinamjoo.com`:
+The workflow is currently configured to deploy `https://amirmahdinamjoo.com`:
 
-1. In `.github/workflows/deploy.yml`, change both instances of `--env github-pages` to `--env production`.
-2. Confirm that the existing `production` environment in `site.config.json` still has `base_path: "/"` and `custom_domain: "amirmahdinamjoo.com"`.
-3. Push the workflow change. The generator will include the correct `CNAME` file in the artifact.
+1. Keep both workflow commands set to `--env production`.
+2. Confirm that the `production` environment in `site.config.json` has `base_path: "/"` and `custom_domain: "amirmahdinamjoo.com"`.
+3. The generator will include the correct `CNAME` file in the deployed artifact.
 4. In **Settings → Pages → Custom domain**, enter `amirmahdinamjoo.com` and save it. A `CNAME` file alone does not configure the repository setting.
 5. At the DNS provider, add GitHub Pages' current apex-domain `A` records. Optional `AAAA` records provide IPv6. For a `www` subdomain, use a `CNAME` pointing to `titansarus.github.io`.
 6. Verify the domain in the GitHub account's Pages settings to reduce domain-takeover risk.
@@ -253,7 +253,7 @@ git -C .\academic-site-generator ls-remote --tags origin v0.2.0
 
 ### The page loads without styles, or links return 404
 
-The deployment path probably does not match the repository name. For the current project URL, `base_path` must be `/amirmahdinamjoo-site/`, including its leading and trailing slashes.
+The deployment environment probably does not match the public URL. For `amirmahdinamjoo.com`, the workflow must build `--env production` and `base_path` must be `/`. For the project URL, the workflow must build `--env github-pages` and `base_path` must be `/amirmahdinamjoo-site/`.
 
 ### The Pages deployment job is skipped or rejected
 
